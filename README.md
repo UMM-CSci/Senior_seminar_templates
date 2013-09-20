@@ -1,7 +1,7 @@
-Senior_seminar_templates
-========================
+UMM CSci Senior seminar templates
+=================================
 
-LaTeX templates for UMM CSci senior seminar.
+LaTeX templates for University of Minnesota, Morris, Computer Science senior seminar proceedings.
 
 There are three main components here:
 * sig-alternate.cls which is our modified version of the [ACM sig-alternate document class](http://www.acm.org/sigs/publications/proceedings-templates).
