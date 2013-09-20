@@ -1,0 +1,83 @@
+% This is a sample document using the University of Minnesota, Morris, Computer Science
+% Senior Seminar modification of the ACM sig-alternate style to generate a simple annotated
+% bibliography. The idea is that this document is fairly short, consisting of a brief description
+% of your sources and how you intend to use them (or not). Most of the ``content'' of the
+% generated document comes from the bibliography file, including the notes field which will
+% provide the annotations.
+
+% See https://github.com/UMM-CSci/Senior_seminar_templates for more info and to make
+% suggestions and corrections.
+
+\documentclass{sig-alternate}
+
+\begin{document}
+
+% --- Author Metadata here ---
+%%% REMEMBER TO CHANGE THE SEMESTER AND YEAR
+\conferenceinfo{UMM CSci Fall 2013 Senior Seminar Conference}{Morris, MN}
+
+\title{Something about NP-complete problems}
+
+\numberofauthors{1}
+
+\author{
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+\alignauthor
+Chris S. Student\\
+	\affaddr{Division of Science and Mathematics}\\
+	\affaddr{University of Minnesota, Morris}\\
+	\affaddr{Morris, Minnesota, USA 56267}\\
+	\email{cssxxxx00000@morris.umn.edu}
+}
+
+\maketitle
+
+\begin{abstract}
+This paper discusses new results in NP-complete problems and the use of distributed
+networks to solve certain partial cases of NP-complete problems.
+\end{abstract}
+
+% A category with the (minimum) three required fields
+\category{H.4}{Information Systems Applications}{Miscellaneous}
+%A category including the fourth, optional field follows...
+\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+
+\terms{Delphi theory}
+
+\keywords{ACM proceedings, \LaTeX, text tagging}
+
+\section{Introduction}
+I will focus on using the approach Blah for solving partial cases of
+NP-complete problems on distributed networks.
+
+I plan to use the following sources:
+\begin{itemize}
+\item I expect~\cite{OM:2008} to be one of my main sources, and I'm still looking for another two ``core'' papers to build on.
+\item I may use~\cite{Brun:2008} for comparison. 
+\item I'll use~\cite{Aaronson:2005, wiki:np-complete} and possibly selected chapters of~\cite{Garey:1979} as background. 
+\end{itemize}
+
+As mentioned above I need two other ``core'' papers, and I'm still looking for good examples that I can use to explain the 
+
+I was initially considering algorithms on compete graphs as a possible topic, and looked over~\cite{winkler1984isometric, dobkin1987delaunay, folkman1970graphs} before I settled on my current topic.
+
+% The following two commands are all you need to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+% annotated_bibliography.bib is the name of the BibTex file containing 
+% all the bibliography entries for this example. Note that you *don't* include the .bib ending
+% in the \bibliography command.
+\bibliography{annotated_bibliography}  
+
+% You must have a ".bib" file and remember to run:
+%     pdflatex bibtex pdflatex pdflatex
+% in order to see all the citation references correctly.
+
+\end{document}
+
+
+
