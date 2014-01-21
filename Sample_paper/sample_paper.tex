@@ -9,10 +9,8 @@
 
 \documentclass{sig-alternate}
 \usepackage{color}
+\usepackage[colorinlistoftodos]{todonotes}
 
-%%%% User-defined macros
-\newcommand{\lam}{\lambda}
-\newcommand{\mycomment}[1]{\textcolor{red}{#1}}
 %%%%% Uncomment the following line and comment out the previous one
 %%%%% to remove all comments
 %%%%% NOTE: comments still occupy a line even if invisible;
@@ -65,7 +63,12 @@ equations, theorems, tables and figures.
 We've removed many of the more esoteric tricks here because either
 they'll never be used (e.g., multiple authors) or are used \emph{very}
 rarely (e.g., appendices). Refer to the original ACM document for more
-of those fancy examples. \mycomment{Needs more work}
+of those fancy examples.
+% The current paper format *only* allows inline comments using the todo
+% macro. That's kind of a bummer, and it would be neat if someone figured
+% out how to change the acmconf style to allow this. I suspect it isn't *hard*
+% but there are quite a few details that have to be sorted out in synchrony.
+\todo[inline]{Needs more work}
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -82,8 +85,8 @@ The \textit{proceedings} are the records of a conference, and conference
 editors like ACM seek to give their conference by-products a uniform,
 high-quality appearance. We also would like our proceedings to look highly
 professional, so we're borrowing heavily from the ACM formatting guidelines.
-These include some rigid
-requirements for the format of the proceedings documents: there
+These include some
+rigid requirements for the format of the proceedings documents: there
 is a specified format (balanced  double columns), a specified
 set of fonts (Arial or Helvetica and Times Roman) in
 certain specified sizes (for instance, 9 point for body copy),
@@ -91,6 +94,8 @@ a specified live area (18 $\times$ 23.5 cm [7" $\times$ 9.25"]) centered on
 the page, specified size of margins (2.54cm [1"] top and
 bottom and 1.9cm [.75"] left and right; specified column width
 (8.45cm [3.33"]) and gutter size (.083cm [.33"]).
+
+\todo[inline, color=green]{I really like this section.}
 
 The good news is, with only a handful of manual
 settings\footnote{One of these, the {\texttt{\char'134 alignauthor}} command, you have
