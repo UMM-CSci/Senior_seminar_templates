@@ -10,6 +10,7 @@ There are three main components here:
 Both the annotated bibliography and the sample paper use ```sig-alternate.cls```, which is our modified version of the [ACM sig-alternate document class](http://www.acm.org/sigs/publications/proceedings-templates). The primary changes we've made to the ACM document class and examples are:
 * Replaced the copyright notice with a Creative Commons license.
 * Removed the ACM document fees.
+* Removed the terms and categories, which seem to really just be confusing relic of a pre-search-engine era.
 * Simplified the examples somewhat, removing features such as multiple authors that we're not likely to use.
 
 Since the annotated bibliography example and the sample paper both use ```sig-alternate.cls```, we have a link to it in the annotated bibliography folder instead of a second copy. This will hopefully make it easier to ensure that we don't end up with two different versions out there with slightly different behaviors.
