@@ -12,6 +12,6 @@ Both the annotated bibliography and the sample paper use ```sig-alternate.cls```
 * Removed the ACM document fees.
 * Removed the terms and categories, which seem to really just be confusing relic of a pre-search-engine era.
 * Simplified the examples somewhat, removing features such as multiple authors that we're not likely to use.
-* Changed the paper size to 8.5 by 11 from the default A4. 
+* "Forced" the paper size to US Letter (8.5 by 11 inches). This is useful because tools like TexMaker default to A4, and this overrides that.
 
 Since the annotated bibliography example and the sample paper both use ```sig-alternate.cls```, we have a link to it in the annotated bibliography folder instead of a second copy. This will hopefully make it easier to ensure that we don't end up with two different versions out there with slightly different behaviors.
