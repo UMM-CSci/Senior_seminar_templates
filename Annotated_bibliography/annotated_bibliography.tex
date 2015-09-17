@@ -10,6 +10,8 @@
 
 \documentclass{sig-alternate}
 
+\usepackage{url}
+
 \begin{document}
 
 % --- Author Metadata here ---
@@ -41,20 +43,27 @@ This paper discusses new results in NP-complete problems and the use of distribu
 networks to solve certain partial cases of NP-complete problems.
 \end{abstract}
 
-\section{Introduction}
-I will focus on using the approach Blah for solving partial cases of
+\section{Discussion of sources}
+
+I will focus on using the \emph{super-new-nifty-method} for solving partial cases of
 NP-complete problems on distributed networks.
+
+\subsection{Sources I expect to use (and how)}
 
 I plan to use the following sources:
 \begin{itemize}
-\item I expect~\cite{OM:2008} to be one of my main sources, and I'm still looking for another two ``core'' papers to build on.
-\item I may use~\cite{Brun:2008} for comparison. 
-\item I'll use~\cite{Aaronson:2005, wiki:np-complete} and possibly selected chapters of~\cite{Garey:1979} as background. 
+\item I expect~\cite{OM:2008, prakash2013fractional} to be two of my main sources, and I'm still looking for one more ``core'' paper to build on. \cite{OM:2008} covers \emph{this} and \emph{that}, which is important for \emph{the other}. \cite{prakash2013fractional} takes a very different approach which appears to take better advantage of some new developments in cloud infrastructure. One area where a new paper would be helpful would be in better connecting and comparing these two techniques.
+\item I think I'll use~\cite{Brun:2008} for background on cloud infrastructure. 
+\item I'll use~\cite{Aaronson:2005, wiki:np-complete} and possibly selected chapters of~\cite{Garey:1979} as background on NP-completeness and what it means to solve partial cases of NP-complete problems. The Wikipedia entry on NP-Completeness (\cite{wiki:NPComplete}) looks like it may be useful as a background reference, especially their little ``inheritance'' chart showing the reductions for some of the ``standard'' problems.
 \end{itemize}
 
-As mentioned above I need two other ``core'' papers, and I'm still looking for good examples that I can use to explain the 
+As mentioned above I still one more ``core'' papers, and I'm still looking for good examples that I can use to explain why solving partial cases of NP-complete problems matters.
 
-I was initially considering algorithms on compete graphs as a possible topic, and looked over~\cite{winkler1984isometric, dobkin1987delaunay, folkman1970graphs} before I settled on my current topic.
+\subsection{Sources I doubt I'll use}
+
+I was initially considering algorithms on compete graphs as a possible topic, and looked over~\cite{winkler1984isometric, dobkin1987delaunay, folkman1970graphs} before I settled on my current topic. \cite{winkler1984isometric} was quite readable and provided a nice background on complete graphs, and might still become a background citation.
+
+I also looked at~\cite{trulyFrightening2011} which I thought would be very helpful, but turned out to be \emph{very} poorly written to the point of being almost incomprehsible. I also thought~\cite{littlePoster2013} looked promising, but it was just a two page poster paper and had almost no useful detail. I tried searching for follow-up work and couldn't find any. Some searching with my advisor suggests that this poster was part of someone's Master's thesis, and it looks like they took an industry job right after this and haven't published anything since.
 
 % The following two commands are all you need to
 % produce the bibliography for the citations in your paper.
@@ -69,6 +78,5 @@ I was initially considering algorithms on compete graphs as a possible topic, an
 % in order to see all the citation references correctly.
 
 \end{document}
-
 
 
