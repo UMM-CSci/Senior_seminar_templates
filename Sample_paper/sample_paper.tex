@@ -136,7 +136,13 @@ can indicate italicized words or phrases in your text with
 the command \texttt{{\char'134}textit}; emboldening with the
 command \texttt{{\char'134}textbf}
 and typewriter-style (for instance, for computer code) with
-\texttt{{\char'134}texttt}.  But remember, you do not
+\texttt{{\char'134}texttt}.
+
+As a rule you'd prefer \texttt{{\char'134}emph} (which stands for \emph{emphasize})
+over something like \texttt{{\char'134}textit} since that gives the typesetting system
+more flexibility in how it can emphasize that text.
+
+You do not
 have to indicate typestyle changes when such changes are
 part of the \textit{structural} elements of your
 article; for instance, the heading of this subsection will
@@ -210,18 +216,22 @@ n_2 = \prod_{i = 1}^k b_i
 \]
 
 \subsection{Citations}
-Citations to articles \cite{Aaronson:2005,Garey:1979,Brun:2008} listed
+Citations to articles~\cite{Aaronson:2005,Garey:1979,Brun:2008} listed
 in the Bibliography section of your
 article will occur throughout the text of your article.
 You should use BibTeX to automatically produce this bibliography;
 you simply need to insert one of several citation commands with
 a key of the item cited in the proper location in
-the \texttt{.tex} file \cite{OM:2008}.
+the \texttt{.tex} file~\cite{OM:2008}.
 The key is a short reference you invent to uniquely
 identify each work; in this sample document, the key is
 the first author's surname and a
 word from the title.  This identifying key is included
 with each item in the \texttt{.bib} file for your article.
+
+It is recommended that you precede \texttt{{\char'134}cite} commands with a tilde
+character instead of a space, e.g., \texttt{some text\textasciitilde{\char'134}cite}. The tilde gives you a non-breaking space which ensures that your citation won't get
+stranded by itself on the beginning of a line.
 
 The details of the construction of the \texttt{.bib} file
 are beyond the scope of this sample document, but more
