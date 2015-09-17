@@ -15,3 +15,23 @@ Both the annotated bibliography and the sample paper use ```sig-alternate.cls```
 * "Forced" the paper size to US Letter (8.5 by 11 inches). This is useful because tools like TexMaker default to A4, and this overrides that.
 
 Since the annotated bibliography example and the sample paper both use ```sig-alternate.cls```, we have a link to it in the annotated bibliography folder instead of a second copy. This will hopefully make it easier to ensure that we don't end up with two different versions out there with slightly different behaviors.
+
+## Using LaTeX
+
+We have LaTeX and the TeXMaker GUI installed in the lab, so you should be able to clone a copy of your repo and work in the lab without any problems.
+
+If you want to install LaTeX on your own computer(s), there are a variety of tools you can use. Be prepared, though, for a quite substantial download; the full LaTeX install is very large (currently 2.5GB – there are lots of tools, libraries, fonts, etc.) and can take a while even on the University network (I don't think the server on the other end is very fast).
+
+You could do the whole thing on the command line with editors like emacs or vim, but there are a number of more WYSIWYG LaTeX GUIs worth considering:
+
+ - [TexMaker](http://www.xm1math.net/texmaker/) (what we have in the lab)
+ - [TexStudio](http://www.texstudio.org/) (similar to TexMaker)
+ - [LyX](http://www.lyx.org/)
+ - [TexShop](http://pages.uoregon.edu/koch/texshop/) (Mac specific)
+
+There are also some on-line, cloud-based solutions for folks that prefer that route:
+
+ - [ShareLaTeX](https://www.sharelatex.com/)
+ - [Overleaf](https://www.overleaf.com/)
+ 
+These are freemium, and some of the pay features would be pretty useful, so that's an issue to consider. They also don't necessary interact beautifully with `git`, so it you and your advisor want to use `git`/Github, then that's a concern.
