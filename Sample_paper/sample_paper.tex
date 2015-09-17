@@ -380,13 +380,15 @@ Suppose on the contrary there exists a real number $L$ such that
 \lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
 \end{displaymath}
 Then
-\begin{displaymath}
-l=\lim_{x\rightarrow c} f(x)
-= \lim_{x\rightarrow c}
-\left[ g{x} \cdot \frac{f(x)}{g(x)} \right ]
-= \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
-\frac{f(x)}{g(x)} = 0\cdot L = 0,
-\end{displaymath}
+\begin{align*}
+l &= \lim_{x\rightarrow c} f(x) \\
+  &= \lim_{x\rightarrow c}
+\left[ g{x} \cdot \frac{f(x)}{g(x)} \right ] \\
+  &= \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
+\frac{f(x)}{g(x)}  \\
+  &= 0\cdot L  \\
+  &= 0,
+\end{align*}
 which contradicts our assumption that $l\neq 0$.
 \end{proof}
 
