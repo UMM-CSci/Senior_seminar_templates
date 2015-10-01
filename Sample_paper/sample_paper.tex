@@ -281,16 +281,17 @@ Table~\ref{tab:frequencyOfSpecialChars} is included in the input file;
 compare the placement of the table here with the table in the
 PDF output running \LaTeX\ on this document.
 
-\begin{table}
+\begin{table}[t]
 \centering
 \caption{Frequency of Special Characters}
-\begin{tabular}{|c|c|l|} \hline
-Non-English or Math&Frequency&Comments\\ \hline
-\O & 1 in 1,000& For Swedish names\\ \hline
-$\pi$ & 1 in 5& Common in math\\ \hline
-\$ & 4 in 5 & Used in business\\ \hline
-$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-\hline\end{tabular}
+\label{tab:frequencyOfSpecialChars}
+\begin{tabular}{c|c|l}
+Non-English or Math&Frequency & Comments\\ \hline
+\O & 1 in 1,000 & For Swedish names\\
+$\pi$ & 1 in 5 & Common in math\\
+\$ & 4 in 5 & Used in business\\
+$\Psi^2_1$ & 1 in 40,000 & Unexplained usage\\
+\end{tabular}
 \end{table}
 
 To set a wider table, which takes up the whole width of
@@ -306,61 +307,47 @@ table here with the table in the printed dvi
 output of this document.
 
 
-\begin{table*}
+\begin{table*}[t]
 \centering
 \caption{Some Typical Commands}
-\begin{tabular}{|c|c|l|} \hline
-Command&A Number&Comments\\ \hline
-\texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
-\texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
-\texttt{{\char'134}table}& 300 & For tables\\ \hline
-\texttt{{\char'134}table*}& 400& For wider tables\\ \hline\end{tabular}
+\label{tab:typicalCommands}
+\begin{tabular}{ccl}
+Command & A Number & Comments \\ \hline
+\texttt{\textbackslash alignauthor}     & 100 & Author alignment\\
+\texttt{\textbackslash numberofauthors} & 200 & Author enumeration\\
+\texttt{\textbackslash table}           & 300 & For tables\\
+\texttt{\textbackslash table*}          & 400 & For wider tables\\ 
+\end{tabular}
 \end{table*}
 % end the environment with {table*}, NOTE not {table}!
 
-\subsection{Figures}
-Like tables, figures cannot be split across pages; the
-best placement for them
-is typically the top or the bottom of the page nearest
-their initial cite.  To ensure this proper ``floating'' placement
-of figures, use the environment
-\textbf{figure} to enclose the figure and its caption.
-
-This sample document contains examples of %\textbf{.eps}
-%and 
-a \textbf{.pdf} file to be displayable with \LaTeX.  More
-details on each of these is found in the \textit{Author's Guide}.
 \subsection{Citations}
 \label{sec:citations}
 
-\begin{figure}
-\centering
-\psfig{file=sample_graph.pdf,width =3in}
-\caption{A sample graph just spanning one column.}
-\end{figure}
+Citations to articles~\cite{Aaronson:2005,Garey:1979,Brun:2008} listed
+in the Bibliography section of your
+article will occur throughout the text of your article.
+You should use BibTeX to automatically produce this bibliography;
+you simply need to insert one of several citation commands with
+a key of the item cited in the proper location in
+the \texttt{.tex} file~\cite{OM:2008}.
+The key is a short reference you invent to uniquely
+identify each work; in this sample document, the key is
+the first author's surname and a
+word from the title.  This identifying key is included
+with each item in the \texttt{.bib} file for your article.
 
 It is recommended that you precede \texttt{\textbackslash cite} (and 
 \texttt{\textbackslash ref}) commands with a tilde
 character instead of a space, e.g., \texttt{some text\textasciitilde\textbackslash cite}. The tilde gives you a non-breaking space which ensures that your citation won't get
 stranded by itself on the beginning of a line.
 
-As was the case with tables, you may want a figure
-that spans two columns.  To do this, and still to
-ensure proper ``floating'' placement of tables, use the environment
-\textbf{figure*} to enclose the figure and its caption.
-\begin{figure*}
-\centering
-\psfig{file=sample_graph.pdf,width =5.3in}
-\caption{A sample graph that needs to span two columns of text.}
-\end{figure*}
-and don't forget to end the environment with
-{figure*}, not {figure}!
+The details of the construction of the \texttt{.bib} file
+are beyond the scope of this sample document, but more
+information can be found in the \textit{Author's Guide},
+and exhaustive details in the \textit{\LaTeX\ User's
+Guide}.
 
-It's easiest and you tend to get the best quality if your figures vector graphics
-in PDF format. You can include other formats such as PNG, but they will usually
-not look nearly as professional, especially when printed on high resolution printers.
-\emph{Be vary wary of screen captures from other papers. They tend to look pixelated
-and amateurish even at high resolutions.}
 This article shows only the plainest form
 of the citation command, using \texttt{\textbackslash cite},
 which is all that is needed for our senior seminar.
