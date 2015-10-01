@@ -74,6 +74,8 @@ of those fancy examples.
 \keywords{ACM proceedings, \LaTeX, text tagging}
 
 \section{Introduction}
+\label{sec:introduction}
+
 The \textit{proceedings} are the records of a conference, and conference
 editors like ACM seek to give their conference by-products a uniform,
 high-quality appearance. We also would like our proceedings to look highly
@@ -101,10 +103,11 @@ The remainder of this document is concerned with showing, in
 the context of an ``actual'' document, the \LaTeX\ commands
 specifically available for denoting the structure of a
 proceedings paper, rather than with giving rigorous descriptions
-or explanations of such commands. Section~\ref{main} introduces the main
-examples of formatting. 
+or explanations of such commands. Section~\ref{sec:body} introduces the main
+examples of formatting, and Section~\ref{sec:conclusions} wraps things up. 
 
-\section{The {\secit Body} of The Paper}\label{main}
+\section{The {\secit Body} of The Paper}
+\label{sec:body}
 
 Typically, the body of a paper is organized
 into a hierarchical structure, with numbered or unnumbered
@@ -130,6 +133,7 @@ start of a new paragraph with a blank line in your
 input file; that is why this sentence forms a separate paragraph.
 
 \subsection{Type Changes and {\subsecit Special} Characters}
+\label{sec:typeChangesSpecialChars}
 
 We have already seen several typeface changes in this sample.  You
 can indicate italicized words or phrases in your text with
@@ -162,11 +166,15 @@ available in the \textit{\LaTeX\
 User's Guide}\cite{Lamport:LaTeX}.
 
 \subsection{Math Equations}
+\label{sec:mathEquations}
+
 You may want to display math equations in three distinct styles:
 inline, numbered or non-numbered display.  Each of
 the three are discussed in the next sections.
 
 \subsubsection{Inline (In-text) Equations}
+\label{sec:inlineEquations}
+
 A formula that appears in the running text is called an
 inline or in-text formula.  It is produced by the
 \textbf{math} environment, which can be
@@ -181,6 +189,8 @@ set here in in-line math style, looks slightly different when
 set in display style.  (See next section).
 
 \subsubsection{Display Equations}
+\label{sec:displayEquations}
+
 A numbered display equation -- one set off by vertical space
 from the text and centered horizontally -- is produced
 by the \textbf{equation} environment. An unnumbered display
@@ -214,6 +224,7 @@ n_1 = \sum_{i = 1}^k a_i \\
 n_2 = \prod_{i = 1}^k b_i
 \end{array}
 \]
+\label{sec:multiLineFormulas}
 
 \subsection{Citations}
 Citations to articles~\cite{Aaronson:2005,Garey:1979,Brun:2008} listed
@@ -245,6 +256,8 @@ This is what is stipulated in the SIGS style specifications.
 No other citation format is endorsed or supported.
 
 \subsection{Tables}
+\label{sec:tables}
+
 Because tables cannot be split across pages, the best
 placement for them is typically the top of the page
 nearest their initial cite.  To
@@ -258,9 +271,9 @@ on \textbf{tabular} material
 is found in the \textit{\LaTeX\ User's Guide}.
 
 Immediately following this sentence is the point at which
-Table 1 is included in the input file; compare the
-placement of the table here with the table in the printed
-dvi output of this document.
+Table~\ref{tab:frequencyOfSpecialChars} is included in the input file; 
+compare the placement of the table here with the table in the
+PDF output running \LaTeX\ on this document.
 
 \begin{table}
 \centering
@@ -277,10 +290,11 @@ $\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
 To set a wider table, which takes up the whole width of
 the page's live area, use the environment
 \textbf{table*} to enclose the table's contents and
-the table caption.  As with a single-column table, this wide
+the table caption, as demonstrated in Table~\ref{tab:typicalCommands} below.  
+As with a single-column table, this wide
 table will ``float" to a location deemed more desirable.
 Immediately following this sentence is the point at which
-Table 2 is included in the input file; again, it is
+Table~\ref{tab:typicalCommands} is included in the input file; again, it is
 instructive to compare the placement of the
 table here with the table in the printed dvi
 output of this document.
@@ -310,6 +324,8 @@ This sample document contains examples of %\textbf{.eps}
 %and 
 a \textbf{.pdf} file to be displayable with \LaTeX.  More
 details on each of these is found in the \textit{Author's Guide}.
+\subsection{Citations}
+\label{sec:citations}
 
 \begin{figure}
 \centering
@@ -337,6 +353,8 @@ not look nearly as professional, especially when printed on high resolution prin
 and amateurish even at high resolutions.}
 
 \subsection{Theorem-like Constructs}
+\label{sec:theoremLikeConstructs}
+
 Other common constructs that may occur in your article are
 the forms for logical constructs like theorems, axioms,
 corollaries and proofs.  There are
@@ -353,6 +371,7 @@ the\linebreak\texttt{{\char'134}newtheorem} command:
 Let $f$ be continuous on $[a,b]$.  If $G$ is
 an antiderivative for $f$ on $[a,b]$, then
 \begin{displaymath}\int^b_af(t)dt = G(b) - G(a).\end{displaymath}
+\label{thm:integration}
 \end{theorem}
 
 The other uses the \textbf{definition} environment, created
@@ -404,6 +423,8 @@ use the \texttt{{\char'134}newtheorem} or the
 respectively, to create it.
 
 \subsection*{A {\secit Caveat} for the \TeX\ Expert}
+\label{sec:caveatForExperts}
+
 Because you have just been given permission to
 use the \texttt{{\char'134}newdef} command to create a
 new form, you might think you can
@@ -416,6 +437,8 @@ some or all of the \texttt{{\char'134}def}s recompilation will
 be, to say the least, problematic.
 
 \section{Conclusions}
+\label{sec:conclusions}
+
 This paragraph will end the body of this sample document.
 Remember that you might still have Acknowledgments or
 Appendices; brief samples of these
@@ -426,7 +449,8 @@ this paper are to articles which have nothing to
 do with the present subject and are used as
 examples only.
 
-\section{Acknowledgments}
+\section*{Acknowledgments}
+\label{sec:acknowledgments}
 
 This section is optional; it is a location for you
 to acknowledge grants, funding, editing assistance and
