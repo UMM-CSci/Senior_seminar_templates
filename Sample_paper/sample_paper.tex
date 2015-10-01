@@ -200,30 +200,31 @@ Again, in either environment, you can use any of the symbols
 and structures available in \LaTeX; this section will just
 give a couple of examples of display equations in context.
 First, consider the equation, shown as an inline equation above:
-%%%%
+
 \begin{equation*}
 \lim_{n\rightarrow \infty}x=0
 \end{equation*}
-%%%%
+
 Notice how it is formatted somewhat differently in
 the \textbf{displaymath}
 environment.  Now, we'll enter an unnumbered equation:
-\begin{displaymath}\sum_{i=0}^{\infty} x + 1\end{displaymath}
-and follow it with another numbered equation:
-\begin{equation}\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f\end{equation}
+
+\begin{displaymath}
+	\sum_{i=0}^{\infty} x + 1
+\end{displaymath}
+
+and follow it with a numbered equation (Equation~\ref{eq:summation}):
+
+\begin{equation}
+	\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
+\label{eq:summation}
+\end{equation}
+
 just to demonstrate \LaTeX's able handling of numbering.
+Note that if you use numbered equations, you can give them \texttt{label}s
+and \texttt{\textbackslash ref} them, e.g., Equation~\ref{eq:summation}.
 
 \subsection{Multi-line formulas}
-%%%%%% \[ \] denotes math; array environment is needed for multi-line
-%%%%%% format, {c} means that the array has one column, centered 
-%%%%%  (alternatives are {l} for left-aligned, {r} for right-aligned)
-%%%%%  \\ denotes a new line
-\[
-\begin{array}{c}
-n_1 = \sum_{i = 1}^k a_i \\
-n_2 = \prod_{i = 1}^k b_i
-\end{array}
-\]
 \label{sec:multiLineFormulas}
 
 \subsection{Citations}
@@ -239,13 +240,25 @@ identify each work; in this sample document, the key is
 the first author's surname and a
 word from the title.  This identifying key is included
 with each item in the \texttt{.bib} file for your article.
+The \texttt{align} and \texttt{align*} environments let you align sequences of
+equations so, for examples, a sequences of equal signs line up nicely. 
 
+% The & creates a "virtual tab stop" and corresponding &'s on each line
+% will be aligned when the layout is done.
+\begin{align*}
+n_1 &= \sum_{i = 1}^k a_i \\
+n_{x-y} &= \prod_{i = 1}^k b_i
+\end{align*}
 
 The details of the construction of the \texttt{.bib} file
 are beyond the scope of this sample document, but more
 information can be found in the \textit{Author's Guide},
 and exhaustive details in the \textit{\LaTeX\ User's
 Guide}.
+\begin{align*}
+ f(x) &= (x+a)(x+b) \\
+ &= x^2 + (a+b)x + ab
+\end{align*}
 
 
 \subsection{Tables}
