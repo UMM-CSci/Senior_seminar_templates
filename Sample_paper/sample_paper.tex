@@ -23,7 +23,7 @@
 %%% REMEMBER TO CHANGE THE SEMESTER AND YEAR AS NEEDED
 \conferenceinfo{UMM CSci Senior Seminar Conference, December 2015}{Morris, MN}
 
-\title{Solving partial NP-complete problems on distributed networks}
+\title{UMM CSci Senior Seminar LaTeX template}
 
 \numberofauthors{1}
 
@@ -74,6 +74,8 @@ of those fancy examples.
 \keywords{ACM proceedings, \LaTeX, text tagging}
 
 \section{Introduction}
+\label{sec:introduction}
+
 The \textit{proceedings} are the records of a conference, and conference
 editors like ACM seek to give their conference by-products a uniform,
 high-quality appearance. We also would like our proceedings to look highly
@@ -91,8 +93,9 @@ bottom and 1.9cm [.75"] left and right; specified column width
 \todo[inline, color=green]{I really like this section.}
 
 The good news is, with only a handful of manual
-settings,\footnote{One of these, the {\texttt{\char'134 alignauthor}} command, you have
-already used; another, {\texttt{\char'134 balancecolumns}} will
+settings,\footnote{One of these, the \texttt{\textbackslash alignauthor} command, 
+you have
+already used; another, \texttt{\textbackslash balancecolumns} will
 be used in your very last run of \LaTeX\ to ensure
 balanced column heights on the last page.} the \LaTeX\ document
 class file handles all of this for you.
@@ -101,15 +104,16 @@ The remainder of this document is concerned with showing, in
 the context of an ``actual'' document, the \LaTeX\ commands
 specifically available for denoting the structure of a
 proceedings paper, rather than with giving rigorous descriptions
-or explanations of such commands. Section~\ref{main} introduces the main
-examples of formatting. 
+or explanations of such commands. Section~\ref{sec:body} introduces the main
+examples of formatting, and Section~\ref{sec:conclusions} wraps things up. 
 
-\section{The {\secit Body} of The Paper}\label{main}
+\section{The {\secit Body} of The Paper}
+\label{sec:body}
 
 Typically, the body of a paper is organized
 into a hierarchical structure, with numbered or unnumbered
 headings for sections, subsections, sub-subsections, and even
-smaller sections.  The command \texttt{{\char'134}section} that
+smaller sections.  The command \texttt{\textbackslash section} that
 precedes this paragraph is part of such a
 hierarchy.\footnote{This is the second footnote.  It
 starts a series of three footnotes that add nothing
@@ -130,16 +134,16 @@ start of a new paragraph with a blank line in your
 input file; that is why this sentence forms a separate paragraph.
 
 \subsection{Type Changes and {\subsecit Special} Characters}
+\label{sec:typeChangesSpecialChars}
 
 We have already seen several typeface changes in this sample.  You
 can indicate italicized words or phrases in your text with
-the command \texttt{{\char'134}textit}; emboldening with the
-command \texttt{{\char'134}textbf}
+the command \texttt{\textbackslash textit}; emboldening with the
+command \texttt{\textbackslash textbf}
 and typewriter-style (for instance, for computer code) with
-\texttt{{\char'134}texttt}.
-
-As a rule you'd prefer \texttt{{\char'134}emph} (which stands for \emph{emphasize})
-over something like \texttt{{\char'134}textit} since that gives the typesetting system
+\texttt{\textbackslash texttt}.
+As a rule you'd prefer \texttt{\textbackslash emph} (which stands for \emph{emphasize})
+over something like \texttt{\textbackslash textit} since that gives the typesetting system
 more flexibility in how it can emphasize that text.
 
 You do not
@@ -159,28 +163,34 @@ You can use whatever symbols, accented characters, or
 non-English characters you need anywhere in your document;
 you can find a complete list of what is
 available in the \textit{\LaTeX\
-User's Guide}\cite{Lamport:LaTeX}.
+User's Guide}~\cite{Lamport:LaTeX}.
 
 \subsection{Math Equations}
+\label{sec:mathEquations}
+
 You may want to display math equations in three distinct styles:
 inline, numbered or non-numbered display.  Each of
 the three are discussed in the next sections.
 
 \subsubsection{Inline (In-text) Equations}
+\label{sec:inlineEquations}
+
 A formula that appears in the running text is called an
 inline or in-text formula.  It is produced by the
 \textbf{math} environment, which can be
-invoked with the usual \texttt{{\char'134}begin. . .{\char'134}end}
-construction or with the short form \texttt{\$. . .\$}. You
+invoked with the usual \texttt{\textbackslash begin\ldots\textbackslash end}
+construction or with the short form \texttt{\$\ldots \$}. You
 can use any of the symbols and structures,
 from $\alpha$ to $\omega$, available in
-\LaTeX\cite{Lamport:LaTeX}; this section will simply show a
+\LaTeX~\cite{Lamport:LaTeX}; this section will simply show a
 few examples of in-text equations in context. Notice how
 this equation: \begin{math}\lim_{n\rightarrow \infty}x=0\end{math},
 set here in in-line math style, looks slightly different when
 set in display style.  (See next section).
 
 \subsubsection{Display Equations}
+\label{sec:displayEquations}
+
 A numbered display equation -- one set off by vertical space
 from the text and centered horizontally -- is produced
 by the \textbf{equation} environment. An unnumbered display
@@ -190,61 +200,95 @@ Again, in either environment, you can use any of the symbols
 and structures available in \LaTeX; this section will just
 give a couple of examples of display equations in context.
 First, consider the equation, shown as an inline equation above:
-%%%%
+
 \begin{equation*}
 \lim_{n\rightarrow \infty}x=0
 \end{equation*}
-%%%%
+
 Notice how it is formatted somewhat differently in
 the \textbf{displaymath}
 environment.  Now, we'll enter an unnumbered equation:
-\begin{displaymath}\sum_{i=0}^{\infty} x + 1\end{displaymath}
-and follow it with another numbered equation:
-\begin{equation}\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f\end{equation}
+
+\begin{displaymath}
+	\sum_{i=0}^{\infty} x + 1
+\end{displaymath}
+
+and follow it with a numbered equation (Equation~\ref{eq:summation}):
+
+\begin{equation}
+	\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
+\label{eq:summation}
+\end{equation}
+
 just to demonstrate \LaTeX's able handling of numbering.
+Note that if you use numbered equations, you can give them \texttt{label}s
+and \texttt{\textbackslash ref} them, e.g., Equation~\ref{eq:summation}.
 
 \subsection{Multi-line formulas}
-%%%%%% \[ \] denotes math; array environment is needed for multi-line
-%%%%%% format, {c} means that the array has one column, centered 
-%%%%%  (alternatives are {l} for left-aligned, {r} for right-aligned)
-%%%%%  \\ denotes a new line
-\[
-\begin{array}{c}
-n_1 = \sum_{i = 1}^k a_i \\
-n_2 = \prod_{i = 1}^k b_i
-\end{array}
-\]
+\label{sec:multiLineFormulas}
 
-\subsection{Citations}
-Citations to articles~\cite{Aaronson:2005,Garey:1979,Brun:2008} listed
-in the Bibliography section of your
-article will occur throughout the text of your article.
-You should use BibTeX to automatically produce this bibliography;
-you simply need to insert one of several citation commands with
-a key of the item cited in the proper location in
-the \texttt{.tex} file~\cite{OM:2008}.
-The key is a short reference you invent to uniquely
-identify each work; in this sample document, the key is
-the first author's surname and a
-word from the title.  This identifying key is included
-with each item in the \texttt{.bib} file for your article.
+The \texttt{align} and \texttt{align*} environments let you align sequences of
+equations so, for examples, a sequences of equal signs line up nicely. 
 
-It is recommended that you precede \texttt{{\char'134}cite} commands with a tilde
-character instead of a space, e.g., \texttt{some text\textasciitilde{\char'134}cite}. The tilde gives you a non-breaking space which ensures that your citation won't get
-stranded by itself on the beginning of a line.
+% The & creates a "virtual tab stop" and corresponding &'s on each line
+% will be aligned when the layout is done.
+\begin{align*}
+n_1 &= \sum_{i = 1}^k a_i \\
+n_{x-y} &= \prod_{i = 1}^k b_i
+\end{align*}
 
-The details of the construction of the \texttt{.bib} file
-are beyond the scope of this sample document, but more
-information can be found in the \textit{Author's Guide},
-and exhaustive details in the \textit{\LaTeX\ User's
-Guide}.
+\begin{align*}
+ f(x) &= (x+a)(x+b) \\
+ &= x^2 + (a+b)x + ab
+\end{align*}
 
-This article shows only the plainest form
-of the citation command, using \texttt{{\char'134}cite}.
-This is what is stipulated in the SIGS style specifications.
-No other citation format is endorsed or supported.
+\subsection{Figures}
+\label{sec:figures}
+
+Like tables, figures cannot be split across pages; the
+best placement for them
+is typically the top or the bottom of the page nearest
+their initial cite.  To ensure this proper ``floating'' placement
+of figures, use the environment
+\textbf{figure} to enclose the figure and its caption.
+
+This sample document contains examples of
+a \textbf{.pdf} file to be displayable with \LaTeX, such as
+Figure~\ref{fig:singleColumnFigure}.  More
+details on each of these is found in the \textit{Author's Guide}.
+
+\begin{figure}
+\centering
+\psfig{file=sample_graph.pdf,width =3in}
+\caption{A sample graph just spanning one column.}
+\label{fig:singleColumnFigure}
+\end{figure}
+
+
+As was the case with tables, you may want a figure
+that spans two columns, like Figure~\ref{fig:twoColumnFigure}.  
+To do this, and still to
+ensure proper ``floating'' placement of tables, use the environment
+\texttt{figure*} to enclose the figure and its caption.
+And don't forget to end the environment with
+\texttt{figure*}, not \texttt{figure}!
+
+\begin{figure*}
+\centering
+\psfig{file=sample_graph.pdf,width =5.3in}
+\caption{A sample graph that needs to span two columns of text.}
+\label{fig:twoColumnFigure}
+\end{figure*}
+
+It's easiest and you tend to get the best quality if your figure uses vector graphics
+in PDF format. You can include other formats such as PNG, but they will usually
+not look nearly as professional, especially when printed on high resolution printers.
+\emph{Be very wary of screen captures from other papers. They tend to look pixelated
+and amateurish even at high resolutions.}
 
 \subsection{Tables}
+\label{sec:tables}
+
 Because tables cannot be split across pages, the best
 placement for them is typically the top of the page
 nearest their initial cite.  To
@@ -258,105 +302,111 @@ on \textbf{tabular} material
 is found in the \textit{\LaTeX\ User's Guide}.
 
 Immediately following this sentence is the point at which
-Table 1 is included in the input file; compare the
-placement of the table here with the table in the printed
-dvi output of this document.
+Table~\ref{tab:frequencyOfSpecialChars} is included in the input file; 
+compare the placement of the table here with the table in the
+PDF output running \LaTeX\ on this document.
 
-\begin{table}
+\begin{table}[t]
 \centering
 \caption{Frequency of Special Characters}
-\begin{tabular}{|c|c|l|} \hline
-Non-English or Math&Frequency&Comments\\ \hline
-\O & 1 in 1,000& For Swedish names\\ \hline
-$\pi$ & 1 in 5& Common in math\\ \hline
-\$ & 4 in 5 & Used in business\\ \hline
-$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-\hline\end{tabular}
+\label{tab:frequencyOfSpecialChars}
+\begin{tabular}{c|c|l}
+Non-English or Math & Frequency & Comments\\ \hline
+\O & 1 in 1,000 & For Swedish names\\
+$\pi$ & 1 in 5 & Common in math\\
+\$ & 4 in 5 & Used in business\\
+$\Psi^2_1$ & 1 in 40,000 & Unexplained usage\\
+\end{tabular}
 \end{table}
 
 To set a wider table, which takes up the whole width of
 the page's live area, use the environment
 \textbf{table*} to enclose the table's contents and
-the table caption.  As with a single-column table, this wide
+the table caption, as demonstrated in Table~\ref{tab:typicalCommands} below.  
+As with a single-column table, this wide
 table will ``float" to a location deemed more desirable.
 Immediately following this sentence is the point at which
-Table 2 is included in the input file; again, it is
+Table~\ref{tab:typicalCommands} is included in the input file; again, it is
 instructive to compare the placement of the
 table here with the table in the printed dvi
 output of this document.
 
 
-\begin{table*}
+\begin{table*}[t]
 \centering
 \caption{Some Typical Commands}
-\begin{tabular}{|c|c|l|} \hline
-Command&A Number&Comments\\ \hline
-\texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
-\texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
-\texttt{{\char'134}table}& 300 & For tables\\ \hline
-\texttt{{\char'134}table*}& 400& For wider tables\\ \hline\end{tabular}
+\label{tab:typicalCommands}
+\begin{tabular}{ccl}
+Command & A Number & Comments \\ \hline
+\texttt{\textbackslash alignauthor}     & 100 & Author alignment\\
+\texttt{\textbackslash numberofauthors} & 200 & Author enumeration\\
+\texttt{\textbackslash table}           & 300 & For tables\\
+\texttt{\textbackslash table*}          & 400 & For wider tables\\ 
+\end{tabular}
 \end{table*}
 % end the environment with {table*}, NOTE not {table}!
 
-\subsection{Figures}
-Like tables, figures cannot be split across pages; the
-best placement for them
-is typically the top or the bottom of the page nearest
-their initial cite.  To ensure this proper ``floating'' placement
-of figures, use the environment
-\textbf{figure} to enclose the figure and its caption.
+\subsection{Citations}
+\label{sec:citations}
 
-This sample document contains examples of %\textbf{.eps}
-%and 
-a \textbf{.pdf} file to be displayable with \LaTeX.  More
-details on each of these is found in the \textit{Author's Guide}.
+Citations to articles~\cite{Aaronson:2005,Garey:1979,Brun:2008} listed
+in the Bibliography section of your
+article will occur throughout the text of your article.
+You should use BibTeX to automatically produce this bibliography;
+you simply need to insert one of several citation commands with
+a key of the item cited in the proper location in
+the \texttt{.tex} file~\cite{OM:2008}.
+The key is a short reference you invent to uniquely
+identify each work; in this sample document, the key is
+the first author's surname and a
+word from the title.  This identifying key is included
+with each item in the \texttt{.bib} file for your article.
 
-\begin{figure}
-\centering
-\psfig{file=sample_graph.pdf,width =3in}
-\caption{A sample graph just spanning one column.}
-\end{figure}
+It is recommended that you precede \texttt{\textbackslash cite} (and 
+\texttt{\textbackslash ref}) commands with a tilde
+character instead of a space, e.g., \texttt{some text\textasciitilde\textbackslash cite}. The tilde gives you a non-breaking space which ensures that your citation won't get
+stranded by itself on the beginning of a line.
 
+The details of the construction of the \texttt{.bib} file
+are beyond the scope of this sample document, but more
+information can be found in the \textit{Author's Guide},
+and exhaustive details in the \textit{\LaTeX\ User's
+Guide}.
 
-As was the case with tables, you may want a figure
-that spans two columns.  To do this, and still to
-ensure proper ``floating'' placement of tables, use the environment
-\textbf{figure*} to enclose the figure and its caption.
-\begin{figure*}
-\centering
-\psfig{file=sample_graph.pdf,width =5.3in}
-\caption{A sample graph that needs to span two columns of text.}
-\end{figure*}
-and don't forget to end the environment with
-{figure*}, not {figure}!
-
-It's easiest and you tend to get the best quality if your figures vector graphics
-in PDF format. You can include other formats such as PNG, but they will usually
-not look nearly as professional, especially when printed on high resolution printers.
-\emph{Be vary wary of screen captures from other papers. They tend to look pixelated
-and amateurish even at high resolutions.}
+This article shows only the plainest form
+of the citation command, using \texttt{\textbackslash cite},
+which is all that is needed for our senior seminar.
+You shouldn't use any other forms here.
 
 \subsection{Theorem-like Constructs}
+\label{sec:theoremLikeConstructs}
+
 Other common constructs that may occur in your article are
 the forms for logical constructs like theorems, axioms,
 corollaries and proofs.  There are
 two forms, one produced by the
-command \texttt{{\char'134}newtheorem} and the
-other by the command \texttt{{\char'134}newdef}; perhaps
+command \texttt{\textbackslash newtheorem} and the
+other by the command \texttt{\textbackslash newdef}; perhaps
 the clearest and easiest way to distinguish them is
 to compare the two in the output of this sample document:
 
-This uses the \textbf{theorem} environment, created by
-the\linebreak\texttt{{\char'134}newtheorem} command:
+Theorem~\ref{thm:integration} below uses the \textbf{theorem} environment, created by
+the \texttt{\textbackslash newtheorem} command:
+
+% You would usually put a \newtheorem command up at the top 
+% of your LaTeX document after the \usepackage commands. It's
+% just here in this example so it's with the text that describes it.
 \newtheorem{theorem}{Theorem}
+
 \begin{theorem}
 Let $f$ be continuous on $[a,b]$.  If $G$ is
 an antiderivative for $f$ on $[a,b]$, then
 \begin{displaymath}\int^b_af(t)dt = G(b) - G(a).\end{displaymath}
+\label{thm:integration}
 \end{theorem}
 
 The other uses the \textbf{definition} environment, created
-by the \texttt{{\char'134}newdef} command:
+by the \texttt{\textbackslash newdef} command:
 \newdef{definition}{Definition}
 \begin{definition}
 If $z$ is irrational, then by $e^z$ we mean the
@@ -371,7 +421,7 @@ forms is given in the
 There is one other similar construct environment, which is
 already set up
 for you; i.e. you must \textit{not} use
-a \texttt{{\char'134}newdef} command to
+a \texttt{\textbackslash newdef} command to
 create it: the \textbf{proof} environment.  Here
 is a example of its use:
 \begin{proof}
@@ -398,24 +448,28 @@ two different creation commands are in the
 detailed instructions.  If you need to use another construct,
 not listed therein, which you want to have the same
 formatting as the Theorem
-or the Definition\cite{salas:calculus} shown above,
-use the \texttt{{\char'134}newtheorem} or the
-\texttt{{\char'134}newdef} command,
+or the Definition~\cite{salas:calculus} shown above,
+use the \texttt{\textbackslash newtheorem} or the
+\texttt{\textbackslash newdef} command,
 respectively, to create it.
 
 \subsection*{A {\secit Caveat} for the \TeX\ Expert}
+\label{sec:caveatForExperts}
+
 Because you have just been given permission to
-use the \texttt{{\char'134}newdef} command to create a
+use the \texttt{\textbackslash newdef} command to create a
 new form, you might think you can
-use \TeX's \texttt{{\char'134}def} to create a
+use \TeX's \texttt{\textbackslash def} to create a
 new command: \textit{Please refrain from doing this!}
 Remember that your \LaTeX\ source code is primarily intended
 to create camera-ready copy, but may be converted
 to other forms -- e.g. HTML. If you inadvertently omit
-some or all of the \texttt{{\char'134}def}s recompilation will
+some or all of the \texttt{\textbackslash def}s recompilation will
 be, to say the least, problematic.
 
 \section{Conclusions}
+\label{sec:conclusions}
+
 This paragraph will end the body of this sample document.
 Remember that you might still have Acknowledgments or
 Appendices; brief samples of these
@@ -426,11 +480,16 @@ this paper are to articles which have nothing to
 do with the present subject and are used as
 examples only.
 
-\section{Acknowledgments}
+\section*{Acknowledgments}
+\label{sec:acknowledgments}
 
 This section is optional; it is a location for you
 to acknowledge grants, funding, editing assistance and
 what have you.
+
+You want to use the \texttt{\textbackslash section*} version of the \texttt{section}
+command, as an acknowledgments section typically does \emph{not} get
+a number.
 
 It is common (but by no means necessary) for students to thank
 their advisor, and possibly other faculty, friends, and family who provided

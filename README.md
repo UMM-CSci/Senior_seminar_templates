@@ -35,3 +35,9 @@ There are also some on-line, cloud-based solutions for folks that prefer that ro
  - [Overleaf](https://www.overleaf.com/)
  
 These are freemium, and some of the pay features would be pretty useful, so that's an issue to consider. They also don't necessary interact beautifully with `git`, so it you and your advisor want to use `git`/Github, then that's a concern.
+
+## Some notes on LaTeX
+
+**Run LaTeX _and_ BibTeX.** To fully build a LaTeX document you have to run LaTeX (sometimes twice – long story), then run BibTex, and then run LaTeX _again_. This is tedious and annoying, and a holdover from the early days of TeX/LaTeX when computers had very little memory. _Some_ GUI tools like TexStudio try to be "smart" and automatically (re)run things when necessary, but that doesn't always work, and sometimes you still have to re-run things there to get a complete build.
+
+**Make sure you use PdfLatex instead of "plain" LaTeX.** The story here is long and complex, but "plain" LaTeX assumes that (a) all your figures are in PostScript and (b) you want your output in DVI format (instead of PDF). Neither of these assumptions have been likely true in over a decade, and PdfLatex makes more "modern" assumptions that your figures are PDFs and that you want our output to be PDF. So when we say "run LaTeX", we really mean "run PdfLaTeX" in most settings.
