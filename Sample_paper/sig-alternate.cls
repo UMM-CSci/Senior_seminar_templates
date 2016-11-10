@@ -879,7 +879,8 @@
 \@float{copyrightbox}[b]
 \begin{center}
 \setlength{\unitlength}{1pc}
-\begin{picture}(20,6) %Space for copyright notice
+% Brian Mitchell's edit, April 2016, made the margin smaller (2 vs. 6)
+\begin{picture}(20,2) %Space for copyright notice
 \put(0,-0.95){\crnotice{\@toappear}}
 \end{picture}
 \end{center}
@@ -1468,11 +1469,9 @@
 
 %%% UMM MODIFICATION
 \global\boilerplate={This work is licensed under the Creative Commons 
-Attribution-Noncommercial-Share Alike 3.0 United States License. 
+Attribution-NonCommercial-ShareAlike 4.0 International License. 
 To view a copy of this license, visit 
-http://creativecommons.org/licenses/by-nc-sa/3.0/us/ 
-or send a letter to Creative Commons, 171 Second Street, Suite 300, 
-San Francisco, California, 94105, USA.}
+http://creativecommons.org/licenses/by-nc-sa/4.0/.}
 
 
 
