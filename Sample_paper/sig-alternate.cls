@@ -1171,7 +1171,6 @@
                 \hskip -\parindent
                 \begingroup
                     \@svsechd
-                    \@period
                 \endgroup
                 \unskip
                 \@tempskipa #1\relax
