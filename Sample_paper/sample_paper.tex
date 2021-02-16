@@ -337,12 +337,16 @@ and follow it with another numbered equation:
 \end{equation}
 just to demonstrate \LaTeX's able handling of numbering.
 
-\section{Figures}
+%\section{Figures}
 
-The ``\verb|figure|'' environment should be used for figures. One or
-more images can be placed within a figure. If your figure contains
-third-party material, you must clearly identify it as such, as shown
-in the example below.
+%% Elena: this will be helpful to show eventually
+
+%The ``\verb|figure|'' environment should be used for figures. One or
+%more images can be placed within a figure. 
+
+%If your figure contains
+%third-party material, you must clearly identify it as such, as shown
+%in the example below.
 %\begin{figure}[h]
 %  \centering
 %  \includegraphics[width=\linewidth]{sample-franklin}
@@ -352,29 +356,143 @@ in the example below.
 %  \Description{A woman and a girl in white dresses sit in an open car.}
 %\end{figure}
 
-Your figures should contain a caption which describes the figure to
-the reader.
+\subsection{Figures}
+\label{sec:figures}
 
-Figure captions are placed {\itshape below} the figure.
+Like tables, figures cannot be split across pages; the
+best placement for them
+is typically the top or the bottom of the page nearest
+their initial cite.  To ensure this proper ``floating'' placement
+of figures, use the environment
+\textbf{figure} to enclose the figure and its caption.
 
-Every figure should also have a figure description unless it is purely
-decorative. These descriptions convey what’s in the image to someone
-who cannot see it. They are also used by search engine crawlers for
-indexing images, and when images cannot be loaded.
+This sample document contains examples of
+a \textbf{.pdf} file to be displayable with \LaTeX, such as
+Figure~\ref{fig:singleColumnFigure}.  More
+details on each of these is found in the \textit{Author's Guide}.
 
-A figure description must be unformatted plain text less than 2000
-characters long (including spaces).  {\bfseries Figure descriptions
-  should not repeat the figure caption – their purpose is to capture
-  important information that is not already provided in the caption or
-  the main text of the paper.} For figures that convey important and
-complex new information, a short text description may not be
-adequate. More complex alternative descriptions can be placed in an
-appendix and referenced in a short figure description. For example,
-provide a data table capturing the information in a bar chart, or a
-structured list representing a graph.  For additional information
-regarding how best to write figure descriptions and why doing this is
-so important, please see
-\url{https://www.acm.org/publications/taps/describing-figures/}.
+\begin{figure}
+\centering
+\includegraphics[width=3in]{sample_graph.pdf}
+\caption{A sample graph just spanning one column.}
+\Description{Describe your image for visually impaired}
+\label{fig:singleColumnFigure}
+\end{figure}
+
+
+As was the case with tables, you may want a figure
+that spans two columns, like Figure~\ref{fig:twoColumnFigure}.  
+To do this, and still to
+ensure proper ``floating'' placement of tables, use the environment
+\texttt{figure*} to enclose the figure and its caption.
+And don't forget to end the environment with
+\texttt{figure*}, not \texttt{figure}!
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{sample_graph.pdf}
+\caption{A sample graph that needs to span two columns of text.}
+\Description{Describe your image for visually impaired}
+\label{fig:twoColumnFigure}
+\end{figure*}
+
+It's easiest and you tend to get the best quality if your figure uses vector graphics
+in PDF format. You can include other formats such as PNG, but they will usually
+not look nearly as professional, especially when printed on high resolution printers.
+\emph{Be very wary of screen captures from other papers. They tend to look pixelated
+and amateurish even at high resolutions.}
+
+\subsection{Tables}
+\label{sec:tables}
+
+Because tables cannot be split across pages, the best
+placement for them is typically the top of the page
+nearest their initial cite.  To
+ensure this proper ``floating'' placement of tables, use the
+environment \textbf{table} to enclose the table's contents and
+the table caption.  The contents of the table itself must go
+in the \textbf{tabular} environment, to
+be aligned properly in rows and columns, with the desired
+horizontal and vertical rules.  Again, detailed instructions
+on \textbf{tabular} material
+is found in the \textit{\LaTeX\ User's Guide}.
+
+Immediately following this sentence is the point at which
+Table~\ref{tab:frequencyOfSpecialChars} is included in the input file; 
+compare the placement of the table here with the table in the
+PDF output running \LaTeX\ on this document.
+
+\begin{table}[t]
+\centering
+\caption{Frequency of Special Characters}
+\label{tab:frequencyOfSpecialChars}
+\begin{tabular}{c|c|l}
+Non-English or Math & Frequency & Comments\\ \hline
+\O & 1 in 1,000 & For Swedish names\\
+$\pi$ & 1 in 5 & Common in math\\
+\$ & 4 in 5 & Used in business\\
+$\Psi^2_1$ & 1 in 40,000 & Unexplained usage\\
+\end{tabular}
+\end{table}
+
+To set a wider table, which takes up the whole width of
+the page's live area, use the environment
+\textbf{table*} to enclose the table's contents and
+the table caption, as demonstrated in Table~\ref{tab:typicalCommands} below.  
+As with a single-column table, this wide
+table will ``float" to a location deemed more desirable.
+Immediately following this sentence is the point at which
+Table~\ref{tab:typicalCommands} is included in the input file; again, it is
+instructive to compare the placement of the
+table here with the table in the printed dvi
+output of this document.
+
+
+\begin{table*}[t]
+\centering
+\caption{Some Typical Commands}
+\label{tab:typicalCommands}
+\begin{tabular}{ccl}
+Command & A Number & Comments \\ \hline
+\texttt{\textbackslash alignauthor}     & 100 & Author alignment\\
+\texttt{\textbackslash numberofauthors} & 200 & Author enumeration\\
+\texttt{\textbackslash table}           & 300 & For tables\\
+\texttt{\textbackslash table*}          & 400 & For wider tables\\ 
+\end{tabular}
+\end{table*}
+% end the environment with {table*}, NOTE not {table}!
+
+\subsection{Citations}
+\label{sec:citations}
+
+Citations to articles~\cite{Aaronson:2005,Garey:1979,Brun:2008} listed
+in the Bibliography section of your
+article will occur throughout the text of your article.
+You should use BibTeX to automatically produce this bibliography;
+you simply need to insert one of several citation commands with
+a key of the item cited in the proper location in
+the \texttt{.tex} file~\cite{OM:2008}.
+The key is a short reference you invent to uniquely
+identify each work; in this sample document, the key is
+the first author's surname and a
+word from the title.  This identifying key is included
+with each item in the \texttt{.bib} file for your article.
+
+It is recommended that you precede \texttt{\textbackslash cite} (and 
+\texttt{\textbackslash ref}) commands with a tilde
+character instead of a space, e.g., \texttt{some text\textasciitilde\textbackslash cite}. The tilde gives you a non-breaking space which ensures that your citation won't get
+stranded by itself on the beginning of a line.
+
+The details of the construction of the \texttt{.bib} file
+are beyond the scope of this sample document, but more
+information can be found in the \textit{Author's Guide},
+and exhaustive details in the \textit{\LaTeX\ User's
+Guide}.
+
+This article shows only the plainest form
+of the citation command, using \texttt{\textbackslash cite},
+which is all that is needed for our senior seminar.
+You shouldn't use any other forms here.
 
 
 
@@ -405,83 +523,40 @@ command in the {\bfseries preamble} (before the command
   \citestyle{acmauthoryear}
 \end{verbatim}
 
-  Some examples.  A paginated journal article \cite{Abril07}, an
-  enumerated journal article \cite{Cohen07}, a reference to an entire
-  issue \cite{JCohen96}, a monograph (whole book) \cite{Kosiur01}, a
-  monograph/whole book in a series (see 2a in spec. document)
-  \cite{Harel79}, a divisible-book such as an anthology or compilation
-  \cite{Editor00} followed by the same example, however we only output
-  the series if the volume number is given \cite{Editor00a} (so
-  Editor00a's series should NOT be present since it has no vol. no.),
-  a chapter in a divisible book \cite{Spector90}, a chapter in a
-  divisible book in a series \cite{Douglass98}, a multi-volume work as
-  book \cite{Knuth97}, a couple of articles in a proceedings (of a
-  conference, symposium, workshop for example) (paginated proceedings
-  article) \cite{Andler79, Hagerup1993}, a proceedings article with
-  all possible elements \cite{Smith10}, an example of an enumerated
-  proceedings article \cite{VanGundy07}, an informally published work
-  \cite{Harel78}, a couple of preprints \cite{Bornmann2019,
-    AnzarootPBM14}, a doctoral dissertation \cite{Clarkson85}, a
-  master's thesis: \cite{anisi03}, an online document / world wide web
-  resource \cite{Thornburg01, Ablamowicz07, Poker06}, a video game
-  (Case 1) \cite{Obama08} and (Case 2) \cite{Novak03} and \cite{Lee05}
-  and (Case 3) a patent \cite{JoeScientist001}, work accepted for
-  publication \cite{rous08}, 'YYYYb'-test for prolific author
-  \cite{SaeediMEJ10} and \cite{SaeediJETC10}. Other cites might
-  contain 'duplicate' DOI and URLs (some SIAM articles)
-  \cite{Kirschmer:2010:AEI:1958016.1958018}. Boris / Barbara Beeton:
-  multi-volume works as books \cite{MR781536} and \cite{MR781537}. A
-  couple of citations with DOIs:
-  \cite{2004:ITE:1009386.1010128,Kirschmer:2010:AEI:1958016.1958018}. Online
-  citations: \cite{TUGInstmem, Thornburg01, CTANacmart}. Artifacts:
-  \cite{R} and \cite{UMassCitations}.
+%% Elena: examples like this are actually helpful, but I can't locate theit bibliography 
+%% file (I think they are using a databse), so providing examples will have to wait.
 
-\section{Acknowledgments}
+%  Some examples.  A paginated journal article \cite{Abril07}, an
+%  enumerated journal article \cite{Cohen07}, a reference to an entire
+%  issue \cite{JCohen96}, a monograph (whole book) \cite{Kosiur01}, a
+%  monograph/whole book in a series (see 2a in spec. document)
+%  \cite{Harel79}, a divisible-book such as an anthology or compilation
+%  \cite{Editor00} followed by the same example, however we only output
+%  the series if the volume number is given \cite{Editor00a} (so
+%  Editor00a's series should NOT be present since it has no vol. no.),
+%  a chapter in a divisible book \cite{Spector90}, a chapter in a
+%  divisible book in a series \cite{Douglass98}, a multi-volume work as
+%  book \cite{Knuth97}, a couple of articles in a proceedings (of a
+%  conference, symposium, workshop for example) (paginated proceedings
+%  article) \cite{Andler79, Hagerup1993}, a proceedings article with
+%  all possible elements \cite{Smith10}, an example of an enumerated
+%  proceedings article \cite{VanGundy07}, an informally published work
+%  \cite{Harel78}, a couple of preprints \cite{Bornmann2019,
+%    AnzarootPBM14}, a doctoral dissertation \cite{Clarkson85}, a
+%  master's thesis: \cite{anisi03}, an online document / world wide web
+%  resource \cite{Thornburg01, Ablamowicz07, Poker06}, a video game
+%  (Case 1) \cite{Obama08} and (Case 2) \cite{Novak03} and \cite{Lee05}
+%  and (Case 3) a patent \cite{JoeScientist001}, work accepted for
+%  publication \cite{rous08}, 'YYYYb'-test for prolific author
+%  \cite{SaeediMEJ10} and \cite{SaeediJETC10}. Other cites might
+%  contain 'duplicate' DOI and URLs (some SIAM articles)
+%  \cite{Kirschmer:2010:AEI:1958016.1958018}. Boris / Barbara Beeton:
+%  multi-volume works as books \cite{MR781536} and \cite{MR781537}. A
+%  couple of citations with DOIs:
+%  \cite{2004:ITE:1009386.1010128,Kirschmer:2010:AEI:1958016.1958018}. Online
+%  citations: \cite{TUGInstmem, Thornburg01, CTANacmart}. Artifacts:
+%  \cite{R} and \cite{UMassCitations}.
 
-Identification of funding sources and other support, and thanks to
-individuals and groups that assisted in the research and the
-preparation of the work should be included in an acknowledgment
-section, which is placed just before the reference section in your
-document.
-
-This section has a special environment:
-\begin{verbatim}
-  \begin{acks}
-  ...
-  \end{acks}
-\end{verbatim}
-so that the information contained therein can be more easily collected
-during the article metadata extraction phase, and to ensure
-consistency in the spelling of the section heading.
-
-Authors should not prepare this section as a numbered or unnumbered {\verb|\section|}; please use the ``{\verb|acks|}'' environment.
-
-\section{Appendices}
-
-If your work needs an appendix, add it before the
-``\verb|\end{document}|'' command at the conclusion of your source
-document.
-
-Start the appendix with the ``\verb|appendix|'' command:
-\begin{verbatim}
-  \appendix
-\end{verbatim}
-and note that in the appendix, sections are lettered, not
-numbered. This document has two appendices, demonstrating the section
-and subsection identification method.
-
-\section{SIGCHI Extended Abstracts}
-
-The ``\verb|sigchi-a|'' template style (available only in \LaTeX\ and
-not in Word) produces a landscape-orientation formatted article, with
-a wide left margin. Three environments are available for use with the
-``\verb|sigchi-a|'' template style, and produce formatted output in
-the margin:
-\begin{itemize}
-\item {\verb|sidebar|}:  Place formatted text in the margin.
-\item {\verb|marginfigure|}: Place a figure in the margin.
-\item {\verb|margintable|}: Place a table in the margin.
-\end{itemize}
 
 %%
 %% The acknowledgments section is defined using the "acks" environment
@@ -489,46 +564,18 @@ the margin:
 %% identification of the section in the article metadata, and the
 %% consistent spelling of the heading.
 \begin{acks}
-To Robert, for the bagels and explaining CMYK and color spaces.
+This is where you thank those who helped you better understand the material 
+and gave you helpful feedback on the paper, usually including your adviser. 
+This is not a place to thank your family, your significant other or your brest friend, 
+or anyone else  for moral support or yummy cookies. 
 \end{acks}
 
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{sample_paper
-}
+\bibliography{sample_paper}
 
-
-\section{Research Methods}
-
-\subsection{Part One}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-malesuada, quam in pulvinar varius, metus nunc fermentum urna, id
-sollicitudin purus odio sit amet enim. Aliquam ullamcorper eu ipsum
-vel mollis. Curabitur quis dictum nisl. Phasellus vel semper risus, et
-lacinia dolor. Integer ultricies commodo sem nec semper.
-
-\subsection{Part Two}
-
-Etiam commodo feugiat nisl pulvinar pellentesque. Etiam auctor sodales
-ligula, non varius nibh pulvinar semper. Suspendisse nec lectus non
-ipsum convallis congue hendrerit vitae sapien. Donec at laoreet
-eros. Vivamus non purus placerat, scelerisque diam eu, cursus
-ante. Etiam aliquam tortor auctor efficitur mattis.
-
-\section{Online Resources}
-
-Nam id fermentum dui. Suspendisse sagittis tortor a nulla mollis, in
-pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-enim maximus. Vestibulum gravida massa ut felis suscipit
-congue. Quisque mattis elit a risus ultrices commodo venenatis eget
-dui. Etiam sagittis eleifend elementum.
-
-Nam interdum magna at lectus dignissim, ac dignissim lorem
-rhoncus. Maecenas eu arcu ac neque placerat aliquam. Nunc pulvinar
-massa et mattis lacinia.
 
 \end{document}
 \endinput
