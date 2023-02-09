@@ -1,47 +1,94 @@
-% This is a sample document using the University of Minnesota, Morris, Computer Science
-% Senior Seminar modification of the ACM sig-alternate style. Much of this content is taken
-% directly from the ACM sample document illustrating the use of the sig-alternate class. Certain
-% parts that we never use have been removed to simplify the example, and a few additional
-% components have been added.
-
-% See https://github.com/UMM-CSci/Senior_seminar_templates for more info and to make
-% suggestions and corrections.
-
-\documentclass{sig-alternate}
+%%
+%% This is file `sample-sigplan.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `sigplan')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigplan.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%% The first command in your LaTeX source must be the \documentclass command.
+\documentclass[sigplan,screen,nonacm]{acmart}
 \usepackage{color}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+%% NOTE that a single column version is required for 
+%% submission and peer review. This can be done by changing
+%% the \doucmentclass[...]{acmart} in this template to 
+%% \documentclass[manuscript,screen,review]{acmart}
+%% 
+%% To ensure 100% compatibility, please check the white list of
+%% approved LaTeX packages to be used with the Master Article Template at
+%% https://www.acm.org/publications/taps/whitelist-of-latex-packages 
+%% before creating your document. The white list page provides 
+%% information on how to submit additional LaTeX packages for 
+%% review and adoption.
+%% Fonts used in the template cannot be substituted; margin 
+%% adjustments are not allowed.
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
 
-%%%%% Uncomment the following line and comment out the previous one
-%%%%% to remove all comments
-%%%%% NOTE: comments still occupy a line even if invisible;
-%%%%% Don't write them as a separate paragraph
-%\newcommand{\mycomment}[1]{}
 
+%%
+%% end of the preamble, start of the body of the document source.
 \begin{document}
 
-% --- Author Metadata here ---
-%%% REMEMBER TO CHANGE THE SEMESTER AND YEAR AS NEEDED
-\conferenceinfo{UMM CSci Senior Seminar Conference, April 2018}{Morris, MN}
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Sample Paper}
 
-\title{UMM CSci Senior Seminar LaTeX template}
-
-\numberofauthors{1}
-
-\author{
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-\alignauthor
-Chris S. Student\\
-	\affaddr{Division of Science and Mathematics}\\
-	\affaddr{University of Minnesota, Morris}\\
-	\affaddr{Morris, Minnesota, USA 56267}\\
-	\email{cssxxxx00000@morris.umn.edu}
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Sample S. Author}
+\email{sample@morris.umn.edu}
+\affiliation{%
+  \institution{Division of Science and Mathematics 
+	\\
+        University of Minnesota, Morris
+	}
+  \city{Morris}
+  \state{Minnesota}
+  \country{USA}
+  \postcode{56267}
 }
 
-\maketitle
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+%\renewcommand{\shortauthors}{Trovato and Tobin, et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
 \begin{abstract}
 This paper provides a sample of a \LaTeX\ document which conforms,
 somewhat loosely, to the formatting guidelines for the University of
@@ -64,14 +111,21 @@ We've removed many of the more esoteric tricks here because either
 they'll never be used (e.g., multiple authors) or are used \emph{very}
 rarely (e.g., appendices). Refer to the original ACM document for more
 of those fancy examples.
-% The current paper format *only* allows inline comments using the todo
-% macro. That's kind of a bummer, and it would be neat if someone figured
-% out how to change the acmconf style to allow this. I suspect it isn't *hard*
-% but there are quite a few details that have to be sorted out in synchrony.
-\todo[inline]{Needs more work}
+\todo[inline]{You can add comments, such as: Needs more work}
 \end{abstract}
 
-\keywords{ACM proceedings, \LaTeX, text tagging}
+\doclicenseThis
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{datasets, neural networks, gaze detection, text tagging}
+
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
 
 \section{Introduction}
 \label{sec:introduction}
@@ -93,12 +147,8 @@ bottom and 1.9cm [.75"] left and right; specified column width
 \todo[inline, color=green]{I really like this section.}
 
 The good news is, with only a handful of manual
-settings\footnote{One of these, the \texttt{\textbackslash alignauthor}, command, 
-you have
-already used; another, \texttt{\textbackslash balancecolumns} will
-be used in your very last run of \LaTeX\ to ensure
-balanced column heights on the last page.} the \LaTeX\ document
-class file handles all of this for you.
+settings the \LaTeX\ document
+class file\footnote{Look at the \texttt{documentclass} in the beginning to see what it is.} handles all of this for you.
 
 The remainder of this document is concerned with showing, in
 the context of an ``actual'' document, the \LaTeX\ commands
@@ -107,7 +157,7 @@ proceedings paper, rather than with giving rigorous descriptions
 or explanations of such commands. Section~\ref{sec:body} introduces the main
 examples of formatting, and Section~\ref{sec:conclusions} wraps things up. 
 
-\section{The {\secit Body} of The Paper}
+\section{The {\it Body} of The Paper}
 \label{sec:body}
 
 Typically, the body of a paper is organized
@@ -133,7 +183,7 @@ the \textbf{document} environment, you can indicate the
 start of a new paragraph with a blank line in your
 input file; that is why this sentence forms a separate paragraph.
 
-\subsection{Type Changes and {\subsecit Special} Characters}
+\subsection{Type Changes and {\it Special} Characters}
 \label{sec:typeChangesSpecialChars}
 
 We have already seen several typeface changes in this sample.  You
@@ -165,82 +215,146 @@ you can find a complete list of what is
 available in the \textit{\LaTeX\
 User's Guide}~\cite{Lamport:LaTeX}.
 
-\subsection{Math Equations}
-\label{sec:mathEquations}
 
+\section{Sectioning Commands}
+
+Your work should use standard \LaTeX\ sectioning commands:
+\verb|section|, \verb|subsection|, \verb|subsubsection|, and
+\verb|paragraph|. They should be numbered; do not remove the numbering
+from the commands.
+
+Simulating a sectioning command by setting the first word or words of
+a paragraph in boldface or italicized text is {\bfseries not allowed.}
+
+\section{Tables}
+
+The ``\verb|acmart|'' document class includes the ``\verb|booktabs|''
+package --- \url{https://ctan.org/pkg/booktabs} --- for preparing
+high-quality tables.
+
+Table captions are placed {\itshape above} the table.
+
+Because tables cannot be split across pages, the best placement for
+them is typically the top of the page nearest their initial cite.  To
+ensure this proper ``floating'' placement of tables, use the
+environment \textbf{table} to enclose the table's contents and the
+table caption.  The contents of the table itself must go in the
+\textbf{tabular} environment, to be aligned properly in rows and
+columns, with the desired horizontal and vertical rules.  Again,
+detailed instructions on \textbf{tabular} material are found in the
+\textit{\LaTeX\ User's Guide}.
+
+Immediately following this sentence is the point at which
+Table~\ref{tab:freq} is included in the input file; compare the
+placement of the table here with the table in the printed output of
+this document.
+
+\begin{table}
+  \caption{Frequency of Special Characters}
+  \label{tab:freq}
+  \begin{tabular}{ccl}
+    \toprule
+    Non-English or Math&Frequency&Comments\\
+    \midrule
+    \O & 1 in 1,000& For Swedish names\\
+    $\pi$ & 1 in 5& Common in math\\
+    \$ & 4 in 5 & Used in business\\
+    $\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+To set a wider table, which takes up the whole width of the page's
+live area, use the environment \textbf{table*} to enclose the table's
+contents and the table caption.  As with a single-column table, this
+wide table will ``float'' to a location deemed more
+desirable. Immediately following this sentence is the point at which
+Table~\ref{tab:commands} is included in the input file; again, it is
+instructive to compare the placement of the table here with the table
+in the printed output of this document.
+
+\begin{table*}
+  \caption{Some Typical Commands}
+  \label{tab:commands}
+  \begin{tabular}{ccl}
+    \toprule
+    Command &A Number & Comments\\
+    \midrule
+    \texttt{{\char'134}author} & 100& Author \\
+    \texttt{{\char'134}table}& 300 & For tables\\
+    \texttt{{\char'134}table*}& 400& For wider tables\\
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
+Always use midrule to separate table header rows from data rows, and
+use it only for this purpose. This enables assistive technologies to
+recognise table headers and support their users in navigating tables
+more easily.
+
+\section{Math Equations}
 You may want to display math equations in three distinct styles:
-inline, numbered or non-numbered display.  Each of
-the three are discussed in the next sections.
+inline, numbered or non-numbered display.  Each of the three are
+discussed in the next sections.
 
-\subsubsection{Inline (In-text) Equations}
-\label{sec:inlineEquations}
-
-A formula that appears in the running text is called an
-inline or in-text formula.  It is produced by the
-\textbf{math} environment, which can be
-invoked with the usual \texttt{\textbackslash begin\ldots\textbackslash end}
-construction or with the short form \texttt{\$\ldots \$}. You
-can use any of the symbols and structures,
-from $\alpha$ to $\omega$, available in
-\LaTeX~\cite{Lamport:LaTeX}; this section will simply show a
-few examples of in-text equations in context. Notice how
-this equation: \begin{math}\lim_{n\rightarrow \infty}x=0\end{math},
+\subsection{Inline (In-text) Equations}
+A formula that appears in the running text is called an inline or
+in-text formula.  It is produced by the \textbf{math} environment,
+which can be invoked with the usual
+\texttt{{\char'134}begin\,\ldots{\char'134}end} construction or with
+the short form \texttt{\$\,\ldots\$}. You can use any of the symbols
+and structures, from $\alpha$ to $\omega$, available in
+\LaTeX~\cite{Lamport:LaTeX}; this section will simply show a few
+examples of in-text equations in context. Notice how this equation:
+\begin{math}
+  \lim_{n\rightarrow \infty}x=0
+\end{math},
 set here in in-line math style, looks slightly different when
 set in display style.  (See next section).
 
-\subsubsection{Display Equations}
-\label{sec:displayEquations}
+\subsection{Display Equations}
+A numbered display equation---one set off by vertical space from the
+text and centered horizontally---is produced by the \textbf{equation}
+environment. An unnumbered display equation is produced by the
+\textbf{displaymath} environment.
 
-A numbered display equation -- one set off by vertical space
-from the text and centered horizontally -- is produced
-by the \textbf{equation} environment. An unnumbered display
-equation is produced by the \textbf{displaymath} environment.
-
-Again, in either environment, you can use any of the symbols
-and structures available in \LaTeX; this section will just
-give a couple of examples of display equations in context.
-First, consider the equation, shown as an inline equation above:
-
-\begin{equation*}
-\lim_{n\rightarrow \infty}x=0
-\end{equation*}
-
+Again, in either environment, you can use any of the symbols and
+structures available in \LaTeX\@; this section will just give a couple
+of examples of display equations in context.  First, consider the
+equation, shown as an inline equation above:
+\begin{equation}
+  \lim_{n\rightarrow \infty}x=0
+\end{equation}
 Notice how it is formatted somewhat differently in
 the \textbf{displaymath}
 environment.  Now, we'll enter an unnumbered equation:
-
 \begin{displaymath}
-	\sum_{i=0}^{\infty} x + 1
+  \sum_{i=0}^{\infty} x + 1
 \end{displaymath}
-
-and follow it with a numbered equation (Equation~\ref{eq:summation}):
-
+and follow it with another numbered equation:
 \begin{equation}
-	\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
-\label{eq:summation}
+  \sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
 \end{equation}
-
 just to demonstrate \LaTeX's able handling of numbering.
-Note that if you use numbered equations, you can give them \texttt{label}s
-and \texttt{\textbackslash ref} them, e.g., Equation~\ref{eq:summation}.
 
-\subsection{Multi-line formulas}
-\label{sec:multiLineFormulas}
+%\section{Figures}
 
-The \texttt{align} and \texttt{align*} environments let you align sequences of
-equations so, for examples, a sequences of equal signs line up nicely. 
+%% Elena: this will be helpful to show eventually
 
-% The & creates a "virtual tab stop" and corresponding &'s on each line
-% will be aligned when the layout is done.
-\begin{align*}
-n_1 &= \sum_{i = 1}^k a_i \\
-n_{x-y} &= \prod_{i = 1}^k b_i
-\end{align*}
+%The ``\verb|figure|'' environment should be used for figures. One or
+%more images can be placed within a figure. 
 
-\begin{align*}
- f(x) &= (x+a)(x+b) \\
- &= x^2 + (a+b)x + ab
-\end{align*}
+%If your figure contains
+%third-party material, you must clearly identify it as such, as shown
+%in the example below.
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=\linewidth]{sample-franklin}
+%  \caption{1907 Franklin Model D roadster. Photograph by Harris \&
+%    Ewing, Inc. [Public domain], via Wikimedia
+%    Commons. (\url{https://goo.gl/VLCRBB}).}
+%  \Description{A woman and a girl in white dresses sit in an open car.}
+%\end{figure}
 
 \subsection{Figures}
 \label{sec:figures}
@@ -259,8 +373,9 @@ details on each of these is found in the \textit{Author's Guide}.
 
 \begin{figure}
 \centering
-\psfig{file=sample_graph.pdf,width =3in}
+\includegraphics[width=3in]{sample_graph.pdf}
 \caption{A sample graph just spanning one column.}
+\Description{Describe your image for visually impaired}
 \label{fig:singleColumnFigure}
 \end{figure}
 
@@ -275,8 +390,9 @@ And don't forget to end the environment with
 
 \begin{figure*}
 \centering
-\psfig{file=sample_graph.pdf,width =5.3in}
+\includegraphics[width=\textwidth]{sample_graph.pdf}
 \caption{A sample graph that needs to span two columns of text.}
+\Description{Describe your image for visually impaired}
 \label{fig:twoColumnFigure}
 \end{figure*}
 
@@ -378,138 +494,90 @@ of the citation command, using \texttt{\textbackslash cite},
 which is all that is needed for our senior seminar.
 You shouldn't use any other forms here.
 
-\subsection{Theorem-like Constructs}
-\label{sec:theoremLikeConstructs}
 
-Other common constructs that may occur in your article are
-the forms for logical constructs like theorems, axioms,
-corollaries and proofs.  There are
-two forms, one produced by the
-command \texttt{\textbackslash newtheorem} and the
-other by the command \texttt{\textbackslash newdef}; perhaps
-the clearest and easiest way to distinguish them is
-to compare the two in the output of this sample document:
 
-Theorem~\ref{thm:integration} below uses the \textbf{theorem} environment, created by
-the \texttt{\textbackslash newtheorem} command:
+\section{Citations and Bibliographies}
 
-% You would usually put a \newtheorem command up at the top 
-% of your LaTeX document after the \usepackage commands. It's
-% just here in this example so it's with the text that describes it.
-\newtheorem{theorem}{Theorem}
+The use of \BibTeX\ for the preparation and formatting of one's
+references is strongly recommended. Authors' names should be complete
+--- use full first names (``Donald E. Knuth'') not initials
+(``D. E. Knuth'') --- and the salient identifying features of a
+reference should be included: title, year, volume, number, pages,
+article DOI, etc.
 
-\begin{theorem}
-Let $f$ be continuous on $[a,b]$.  If $G$ is
-an antiderivative for $f$ on $[a,b]$, then
-\begin{displaymath}\int^b_af(t)dt = G(b) - G(a).\end{displaymath}
-\label{thm:integration}
-\end{theorem}
+The bibliography is included in your source document with these two
+commands, placed just before the \verb|\end{document}| command:
+\begin{verbatim}
+  \bibliographystyle{ACM-Reference-Format}
+  \bibliography{bibfile}
+\end{verbatim}
+where ``\verb|bibfile|'' is the name, without the ``\verb|.bib|''
+suffix, of the \BibTeX\ file.
 
-The other uses the \textbf{definition} environment, created
-by the \texttt{\textbackslash newdef} command:
-\newdef{definition}{Definition}
-\begin{definition}
-If $z$ is irrational, then by $e^z$ we mean the
-unique number which has
-logarithm $z$: \begin{displaymath}{\log e^z = z}\end{displaymath}
-\end{definition}
+Citations and references are numbered by default. A small number of
+ACM publications have citations and references formatted in the
+``author year'' style; for these exceptions, please include this
+command in the {\bfseries preamble} (before the command
+``\verb|\begin{document}|'') of your \LaTeX\ source:
+\begin{verbatim}
+  \citestyle{acmauthoryear}
+\end{verbatim}
 
-Two lists of constructs that use one of these
-forms is given in the
-\textit{Author's  Guidelines}.
- 
-There is one other similar construct environment, which is
-already set up
-for you; i.e. you must \textit{not} use
-a \texttt{\textbackslash newdef} command to
-create it: the \textbf{proof} environment.  Here
-is a example of its use:
-\begin{proof}
-Suppose on the contrary there exists a real number $L$ such that
-\begin{displaymath}
-\lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
-\end{displaymath}
-Then
-\begin{align*}
-l &= \lim_{x\rightarrow c} f(x) \\
-  &= \lim_{x\rightarrow c}
-\left[ g{x} \cdot \frac{f(x)}{g(x)} \right ] \\
-  &= \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
-\frac{f(x)}{g(x)}  \\
-  &= 0\cdot L  \\
-  &= 0,
-\end{align*}
-which contradicts our assumption that $l\neq 0$.
-\end{proof}
+%% Elena: examples like this are actually helpful, but I can't locate theit bibliography 
+%% file (I think they are using a databse), so providing examples will have to wait.
 
-Complete rules about using these environments and using the
-two different creation commands are in the
-\textit{Author's Guide}; please consult it for more
-detailed instructions.  If you need to use another construct,
-not listed therein, which you want to have the same
-formatting as the Theorem
-or the Definition~\cite{salas:calculus} shown above,
-use the \texttt{\textbackslash newtheorem} or the
-\texttt{\textbackslash newdef} command,
-respectively, to create it.
+%  Some examples.  A paginated journal article \cite{Abril07}, an
+%  enumerated journal article \cite{Cohen07}, a reference to an entire
+%  issue \cite{JCohen96}, a monograph (whole book) \cite{Kosiur01}, a
+%  monograph/whole book in a series (see 2a in spec. document)
+%  \cite{Harel79}, a divisible-book such as an anthology or compilation
+%  \cite{Editor00} followed by the same example, however we only output
+%  the series if the volume number is given \cite{Editor00a} (so
+%  Editor00a's series should NOT be present since it has no vol. no.),
+%  a chapter in a divisible book \cite{Spector90}, a chapter in a
+%  divisible book in a series \cite{Douglass98}, a multi-volume work as
+%  book \cite{Knuth97}, a couple of articles in a proceedings (of a
+%  conference, symposium, workshop for example) (paginated proceedings
+%  article) \cite{Andler79, Hagerup1993}, a proceedings article with
+%  all possible elements \cite{Smith10}, an example of an enumerated
+%  proceedings article \cite{VanGundy07}, an informally published work
+%  \cite{Harel78}, a couple of preprints \cite{Bornmann2019,
+%    AnzarootPBM14}, a doctoral dissertation \cite{Clarkson85}, a
+%  master's thesis: \cite{anisi03}, an online document / world wide web
+%  resource \cite{Thornburg01, Ablamowicz07, Poker06}, a video game
+%  (Case 1) \cite{Obama08} and (Case 2) \cite{Novak03} and \cite{Lee05}
+%  and (Case 3) a patent \cite{JoeScientist001}, work accepted for
+%  publication \cite{rous08}, 'YYYYb'-test for prolific author
+%  \cite{SaeediMEJ10} and \cite{SaeediJETC10}. Other cites might
+%  contain 'duplicate' DOI and URLs (some SIAM articles)
+%  \cite{Kirschmer:2010:AEI:1958016.1958018}. Boris / Barbara Beeton:
+%  multi-volume works as books \cite{MR781536} and \cite{MR781537}. A
+%  couple of citations with DOIs:
+%  \cite{2004:ITE:1009386.1010128,Kirschmer:2010:AEI:1958016.1958018}. Online
+%  citations: \cite{TUGInstmem, Thornburg01, CTANacmart}. Artifacts:
+%  \cite{R} and \cite{UMassCitations}.
 
-\subsection*{A {\secit Caveat} for the \TeX\ Expert}
-\label{sec:caveatForExperts}
 
-Because you have just been given permission to
-use the \texttt{\textbackslash newdef} command to create a
-new form, you might think you can
-use \TeX's \texttt{\textbackslash def} to create a
-new command: \textit{Please refrain from doing this!}
-Remember that your \LaTeX\ source code is primarily intended
-to create camera-ready copy, but may be converted
-to other forms -- e.g. HTML. If you inadvertently omit
-some or all of the \texttt{\textbackslash def}s recompilation will
-be, to say the least, problematic.
+%%
+%% The acknowledgments section is defined using the "acks" environment
+%% (and NOT an unnumbered section). This ensures the proper
+%% identification of the section in the article metadata, and the
+%% consistent spelling of the heading.
+\begin{acks}
+This is where you thank those who helped you better understand the material 
+and gave you helpful feedback on the paper, usually including your adviser. 
+This is not a place to thank your family, your significant other or your brest friend, 
+or anyone else  for moral support or yummy cookies. 
+\end{acks}
 
-\section{Conclusions}
-\label{sec:conclusions}
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sample_paper}
 
-This paragraph will end the body of this sample document.
-Remember that you might still have Acknowledgments or
-Appendices; brief samples of these
-follow.  There is still the Bibliography to deal with; and
-we will make a disclaimer about that here: with the exception
-of the reference to the \LaTeX\ book, the citations in
-this paper are to articles which have nothing to
-do with the present subject and are used as
-examples only.
-
-\section*{Acknowledgments}
-\label{sec:acknowledgments}
-
-This section is optional; it is a location for you
-to acknowledge grants, funding, editing assistance and
-what have you.
-
-You want to use the \texttt{\textbackslash section*} version of the \texttt{section}
-command, as an acknowledgments section typically does \emph{not} get
-a number.
-
-It is common (but by no means necessary) for students to thank
-their advisor, and possibly other faculty, friends, and family who provided
-useful feedback on the paper as it was being written.
-
-In the present case, for example, the
-authors would like to thank Gerald Murray of ACM for
-his help in codifying this \textit{Author's Guide}
-and the \textbf{.cls} and \textbf{.tex} files that it describes.
-
-% The following two commands are all you need in the
-% initial runs of your .tex file to
-% produce the bibliography for the citations in your paper.
-\bibliographystyle{abbrv}
-% sample_paper.bib is the name of the BibTex file containing the
-% bibliography entries. Note that you *don't* include the .bib ending here.
-\bibliography{sample_paper}  
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
 
 \end{document}
+\endinput
+%%
+%% End of file `sample-sigplan.tex'.
