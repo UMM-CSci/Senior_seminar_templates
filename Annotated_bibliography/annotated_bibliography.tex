@@ -8,40 +8,106 @@
 % See https://github.com/UMM-CSci/Senior_seminar_templates for more info and to make
 % suggestions and corrections.
 
-\documentclass{sig-alternate}
+%%
+%% This is file `sample-sigplan.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `sigplan')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigplan.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%% The first command in your LaTeX source must be the \documentclass command.
+\documentclass[sigplan,screen,nonacm]{acmart}
+\usepackage{color}
+\setlength {\marginparwidth }{2cm}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+%% NOTE that a single column version is required for 
+%% submission and peer review. This can be done by changing
+%% the \doucmentclass[...]{acmart} in this template to 
+%% \documentclass[manuscript,screen,review]{acmart}
+%% 
+%% To ensure 100% compatibility, please check the white list of
+%% approved LaTeX packages to be used with the Master Article Template at
+%% https://www.acm.org/publications/taps/whitelist-of-latex-packages 
+%% before creating your document. The white list page provides 
+%% information on how to submit additional LaTeX packages for 
+%% review and adoption.
+%% Fonts used in the template cannot be substituted; margin 
+%% adjustments are not allowed.
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
 
-\usepackage{url}
 
 \begin{document}
 
-% --- Author Metadata here ---
-%%% REMEMBER TO CHANGE THE SEMESTER AND YEAR AS NECESSARY
-\conferenceinfo{UMM CSci Senior Seminar Conference, December 2015}{Morris, MN}
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Sample annotated bibliography}
 
-\title{Something about NP-complete problems}
-
-\numberofauthors{1}
-
-\author{
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-\alignauthor
-Chris S. Student\\
-	\affaddr{Division of Science and Mathematics}\\
-	\affaddr{University of Minnesota, Morris}\\
-	\affaddr{Morris, Minnesota, USA 56267}\\
-	\email{cssxxxx00000@morris.umn.edu}
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Sample S. Author}
+\email{sample@morris.umn.edu}
+\affiliation{%
+  \institution{Division of Science and Mathematics 
+	\\
+        University of Minnesota, Morris
+	}
+  \city{Morris}
+  \state{Minnesota}
+  \country{USA}
+  \postcode{56267}
 }
 
-\maketitle
-
 \begin{abstract}
-This paper discusses new results in NP-complete problems and the use of distributed
-networks to solve certain partial cases of NP-complete problems.
+	This provides an example of using LaTeX and BibTeX to create an annotated
+	bibliography for CSci 4901, Senior Seminar, at the University of Minnesota
+	Morris.
+	
+	\emph{You should replace this abstract with a statement of the general topic
+	for your paper.}
 \end{abstract}
+
+% \doclicenseThis
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{datasets, neural networks, gaze detection, text tagging}
+
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
 
 \section{Discussion of sources}
 
