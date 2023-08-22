@@ -1,1 +1,0 @@
-../Sample_paper/sig-alternate.cls
