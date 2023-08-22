@@ -16,11 +16,11 @@ We've also simplified the examples somewhat, removing features such as multiple 
 There are several different ways to use LaTeX in this course,
 including:
 
-- One-line tools
+- Online tools
 - Using the tools installed in the CSci Lab
 - Installing LaTeX on your own computer
 
-### On-line tools
+### Online tools
 
 Probably the most common approach these days is to use [Overleaf](https://www.overleaf.com/), which provides a cloud-based system that's kind of like Google Docs but for LaTeX.
  
@@ -60,7 +60,7 @@ You could do the whole thing on the command line with editors like emacs or vim,
 
 > The notes below only apply if you're running something
 > like `pdflatex` and `bibtex` on the command line on a
-> lab computer or your own computer. If you're using an on-line
+> lab computer or your own computer. If you're using an online
 > tool like Overleaf or an "IDE" like TexMaker they'll take
 > care of these things for you.
 
