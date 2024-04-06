@@ -1,4 +1,6 @@
 \documentclass[sigplan,screen,nonacm]{acmart}
+\usepackage{rotating}
+\usepackage{tabularray}
 \usepackage{color}
 \setlength {\marginparwidth }{2cm}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -111,41 +113,6 @@ simply the collection of data from animals in the wild, and it is then up to sci
 or conservationists to use the data to answer questions about the animals or to inform
 conservation efforts.
 
-\subsection{How does WiFi work?}
-\label{subsec:How does WiFi work?}
-
-
-\subsection{What is the Internet of Things?}
-\label{subsec:What is the Internet of Things}
-
-The Internet of Things (IoT) represents a transformative shift in the
-realm of technology, encompassing a vast array of physical objects empowered
-with sensors and software to interact autonomously. These objects collect and
-exchange data through network connectivity. In essence, IoT devices, ranging
-from commonplace gadgets to sophisticated systems, have the capability to
-interface with the internet or communicate wirelessly, thereby facilitating
-seamless integration into various facets of daily life. The IoT has been
-applied to a wide range of fields, including healthcare, agriculture,
-manufacturing, and most important to this paper, wildlife monitoring.
-The fundamental structure of an IoT system is comprised of three
-interconnected layers: the perception layer, the network layer, and the
-application layer\cite{kumar2019internet}. The perception layer is responsible for collecting data
-from the environment, which is then transmitted to the application layer via the network layer.
-The transmission layer can use a variety of different methods to transmit data, the two most common being
-ethernet/WiFi, and cellular networks like 5G and LTE\cite{greengard2021internet}. Lastly, the application
-layer is responsible for doing something with the data, such as graph positional data from an
-animals GPS sensor. The physical implementation of these layers
-can vary greatly, but in general, the perception layer consists of a sensor or device that can
-output a signal to be received by a gateway device(the most common gateway device for
-the average person would be a wireless router). The gateway device is connected to
-the internet using one of the aforementioned methods, and it is responsible for
-receiving the data from the perception layer device and transmitting it to the application
-layer, which could be a database to store the data, or a web application to display
-the data\cite{kumar2019internet}. These three theoretical layers are important in understanding the IoT,
-and how it can be used in wildlife tracking. The Wild-Fi biologging tag, is a prime example 
-of how these three layers are implemented in a biologging device and is visually explained 
-by figure ~\ref{fig:wild-fi_IoT_diagram}.
-
 \subsection{What are the Other Biologging Methods?}
 \label{subsec:What are the Other Biologging Methods?}
 
@@ -186,6 +153,55 @@ is only able to transmit periodic tracking records or time stamped data from log
 \cite{cooke2012biotelemetry}. This falls short of the capabilities of IoT enabled 
 biologging devices using LPWAN networks, which are able to transmit data in real time, and can transmit 
 data over much longer distances. 
+
+\subsection{What is WLAN?}
+\label{subsec:What is WLAN?}
+
+Understanding the basics of how a wireless networks transmits data is important to understanding 
+the reasoning behind using it for biologging. Wireless networks, like WLAN (WiFi), 
+works by encoding data into a binary form so it can be sent across a radio frequency to another 
+wireless enabled device. Ones and zeroes are represented by different amplitudes of radio waves 
+and are received by another device\cite{Ghimire_2023}. There are many frequencies that can 
+be used as a medium to send this data, the most popular being 2.4GHz and 5GHz. However, 6GHz 
+frequencies are becoming more popular for it's ability to transmit data at faster rates. In general, 
+as frequency increases, range is sacrificed for higher data rates\cite{Netgear}. Data rates are 
+higher because the radio waves are being received in higher 
+frequency, meaning more ones and zeroes are being received every second. In 
+some cases, speed is not everything, and range is more important, in this case, a lower frequency 
+is a better choice. Sub gigahertz(GHz) frequencies are used in LPWAN networks for this reason. They 
+are able to achieve ranges upwards of 40km at the cost of data rates, LPWAN networks are explored futher 
+in section ~\ref{subsec:Low Power Wide Area Networks (LPWAN)}
+
+\subsection{What is the Internet of Things?}
+\label{subsec:What is the Internet of Things}
+
+The Internet of Things (IoT) represents a transformative shift in the
+realm of technology, encompassing a vast array of physical objects empowered
+with sensors and software to interact autonomously. These objects collect and
+exchange data through network connectivity. In essence, IoT devices, ranging
+from commonplace gadgets to sophisticated systems, have the capability to
+interface with the internet or communicate wirelessly, thereby facilitating
+seamless integration into various facets of daily life. The IoT has been
+applied to a wide range of fields, including healthcare, agriculture,
+manufacturing, and most important to this paper, wildlife monitoring.
+The fundamental structure of an IoT system is comprised of three
+interconnected layers: the perception layer, the network layer, and the
+application layer\cite{kumar2019internet}. The perception layer is responsible for collecting data
+from the environment, which is then transmitted to the application layer via the network layer.
+The transmission layer can use a variety of different methods to transmit data, the two most common being
+ethernet/WiFi, and cellular networks like 5G and LTE\cite{greengard2021internet}. Lastly, the application
+layer is responsible for doing something with the data, such as graph positional data from an
+animals GPS sensor. The physical implementation of these layers
+can vary greatly, but in general, the perception layer consists of a sensor or device that can
+output a signal to be received by a gateway device(the most common gateway device for
+the average person would be a wireless router). The gateway device is connected to
+the internet using one of the aforementioned methods, and it is responsible for
+receiving the data from the perception layer device and transmitting it to the application
+layer, which could be a database to store the data, or a web application to display
+the data\cite{kumar2019internet}. These three theoretical layers are important in understanding the IoT,
+and how it can be used in wildlife tracking. The Wild-Fi biologging tag, is a prime example 
+of how these three layers are implemented in a biologging device and is visually explained 
+by figure ~\ref{fig:wild-fi_IoT_diagram}.
 
 \section{Components of a IoT Biologging System}
 \label{sec:Components of a IoT Biologging Device}
@@ -273,23 +289,36 @@ is shown in Figure ~\ref{fig:SigFox_infrastructure}.
 
 The LoRa and SigFox networks have many similarities in how they are structured 
 and operated, however there are some key differences. The transmission modulation 
-technique used by LoRa is called chirp spread spectrum, and it is slightly 
-different from SigFox's UNB modulation technique.
+technique used by LoRa is called CHIRP(Compressed High Intensity Radar Pulse) spread 
+spectrum, and it is different from the frequency hopping technique that the SigFox 
+network uses. Where frequency hopping transmits signals at a constant frequency before 
+hopping to a different frequency, chirp modulates by increasing or decreasing it's 
+frequency over time, this can be done both linearly or not\cite{ghoslya2017lora}. The 
+spreading factor determines how quickly this modulation takes place; LoRa uses spreading 
+factors SF7 to SF12, the larger the spreading factor, the slower the modulation.
+How these spreading factors compare to each other is shown in Figure ~\ref{fig:Chirp}. 
+The main tradeoffs between spreading factors is the range and data rate of the network, as the 
+spreading factor increases, the range of the network increases, but the data rate decreases\cite{erturk2019survey}. 
+The spreading factor then becomes a critical factor in the design of a LoRa network, as 
+the spreading factor is directly related to the range and data rate of the network, so it should 
+be chosen wisely to fit the needs of the specific use case. Because the frequency is constantly 
+changing, chirp is able to tolerate interference better than that of the frequency hopping 
+technique that the SigFox network uses.
 
 \begin{figure}[htbp]
   \centering
-  \fbox{\includegraphics[width=.9\columnwidth]{LoRa Network Stack.png}}
-  \caption{LoRaWAN network Stack\cite{LoRa_Alliance®_2023}}
-  \label{fig:LoRaWAN_network}
+  \fbox{\includegraphics[width=.9\columnwidth]{Chirp.png}}
+  \caption{Chirp Spread Spectrum Spreading factors\cite{ghoslya2017lora}}
+  \label{fig:Chirp}
 \end{figure}
 
-\subsection{Traditional Wifi}
-\label{subsec:Traditional Wifi}
+\subsection{Traditional Wifi (WLAN)}
+\label{subsec:Traditional Wifi (WLAN)}
 
 A more traditional Wifi network is another method that is used by some companies to 
 implement biologging systems. There are some useful benefits to using a traditional 
 Wifi network over an alternative like LoRa or LPWAN; The biggest of which is data 
-transfer rate. However, because traditional Wifi uses 2.4/5/6 GHz, the range is much more limited 
+transfer rate. However, because traditional Wifi uses 2.4/5/6 GHz frequencies, the range is much more limited 
 than that of a LPWAN network, and the power consumption is higher. The WildFi biologging system designed by 
 Timm Wild and his colleagues is just one example of a device that uses traditional 
 WLAN to collect data from a biologging device. Wild is also the leading member of the 
@@ -316,9 +345,80 @@ transmitted is lower than a LPWAN based device. Wild et. al claim that using a t
 Wifi network with a logging device that has a 70mAh battery and a small solar panel, data can 
 be transmitted 24 hours a day for an entire lifetime of an animal\cite{wild2023internet}.
 
+\subsection{Security}
+\label{subsec:Security}
+
+The security of these networks is a critical factor in the design of a biologging system, as 
+the data being transmitted is often sensitive and can be used to track the location of an animal, 
+which in the hand of an illegal hunter, could be disastrous. While much of the security of the 
+data is in the design of the physical device and it's software, the networks being used also need to 
+be secure and safe. The security of the physical device is important in the event that a node 
+device is lost or stolen.
+
+\subsubsection{SigFox and LoRa Security}
+\label{subsec:SigFox and LoRa Security}
+
+Both the SigFox and LoRa network ensure safe data transmission by using AES (Advanced Encryption Standard) 
+128 for end-to-end encryption. With this encryption method, a 128 bit key is used to encrypt the data from 
+node device and a key is shared with the application server to so that it can decrypt the data\cite{AES128IoT}. 
+This ensures that the data is encrypted at the source, and the data is decrypted at the destination, and 
+the data is encrypted in transit. This is important for the security of the data, as it prevents the data 
+from being readable by anyone who has access to the data, and it also prevents the data from being 
+tampered with in transit. There are many benefits to using AES 128 for end-to-end encryption, including 
+it's proven track record for being secure and efficient. Compared to other encryption methods, AES 128 
+has a small encryption key which makes it less computationally intensive; This leads into another reason why 
+it was chosen for use in these two LPWAN networks. Due to it being computationally efficient, it is 
+a great choice for a system designed around being low power. For a deeper dive into AES 128 encryption and 
+how it is used in LPWAN networks refer to Kun-Lin Tsai's article on the matter\cite{AES128IoT}.
+
+\subsubsection{Traditional Wifi (WLAN) Security}
+\label{subsec:Traditional Wifi (WLAN) Security}
+
+The security mechanisms of a IoT based biologging device that uses a traditional Wifi network can vary 
+depending on the developer of each device and their own preference on how to safely transmit data to the gateway 
+device. In the case of the WildFi devices discussed in section ~\ref{subsec:Traditional Wifi (WLAN)}, data 
+transmissions are encrypted with WPA2 and HTTPS\cite{wild2023internet}. These two methods allow for ease of 
+use for the developer because they are widely supported by most WLAN devices that would be used as gateway 
+devices. WPA2 and HTTPS, similar to the LPWAN networks, uses AES 128 encryption, this provides the same 
+benefits as previously discussed\cite{WPA2Moissinac}. 
 
 \subsection{Comparison and Selection Criteria}
 \label{subsec:Protocol Comparison and Selection Criteria}
+
+Examining the benefits and pitfalls of each IoT network in relation to what is important in a biologging 
+system is important to understand what network to choose for a given application. While many factors are 
+important when accessing these networks for capabilities as IoT network solutions, range, data rate, battery 
+life and security will be the focus of this comparison because they are the most critical for a biologging 
+system.
+
+\definecolor{MineShaft}{rgb}{0.2,0.2,0.2}
+\definecolor{Silver}{rgb}{0.752,0.752,0.752}
+\begin{table}
+\centering
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[177]Q[285]Q[285]Q[185]},
+  row{3} = {fg=MineShaft},
+  row{4} = {fg=MineShaft},
+  row{5} = {fg=MineShaft},
+  row{6} = {fg=MineShaft},
+  cell{2}{2} = {fg=MineShaft},
+  cell{2}{3} = {fg=MineShaft},
+  cell{2}{4} = {fg=MineShaft},
+  hlines = {Silver},
+  vlines,
+  hline{1-2,7} = {-}{black},
+}
+                     & SigFox                             & LoRa                               & WiFi                  \\
+Frequency            & 868MHz(EU) / 915MHz(NA) / 433MHz(AS) & 868MHz(EU) / 915MHz(NA) / 433MHz(AS) & 2.4GHz/ 5GHz/ 6GHz      \\
+Data Rate            & 100bps                             & 50kbps                             & 1840kbps              \\
+Maximum messages/day & 140                                & Unlimited                          & Unlimited             \\
+Range                & 10 km (urban), 40 km (rural)       & 5 km (urban), 20 km (rural)        & 200m                  \\
+Security             & AES-128                            & AES-128                            & WPA2/ HTTPS (AES128) 
+\end{tblr}
+\label{table:Network Comparison Table}
+\caption{Characteristics of explored networks, data from \cite{mekki2019comparative} and \cite{wild2023internet}}
+\end{table}
 
 \begin{figure}[htbp]
   \centering
@@ -330,17 +430,12 @@ be transmitted 24 hours a day for an entire lifetime of an animal\cite{wild2023i
 \begin{figure}[htbp]
   \centering
   \fbox{\includegraphics[width=.9\columnwidth]{NetworkRangeDataRateGraph.jpg}}
-  \caption{Data rate vs range for different LPWAN technologies. \cite{evanczukspeed}}
+  \caption{Data rate vs range for different network technologies. \cite{evanczukspeed}}
   \label{fig:LPWAN_data_rate_range}
 \end{figure}
 
-
-\subsection{Security Protocols}
-\label{subsec:Security Protocols}
-%SLP Protocols
-
-\section{Challenges to Overcome}
-\label{sec:Challenges to Overcome}
+\section{Conclusion}
+\label{sec:Coclusion}
 
 
 %%
