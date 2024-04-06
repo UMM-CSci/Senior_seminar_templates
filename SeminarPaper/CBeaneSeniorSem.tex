@@ -111,6 +111,10 @@ simply the collection of data from animals in the wild, and it is then up to sci
 or conservationists to use the data to answer questions about the animals or to inform
 conservation efforts.
 
+\subsection{How does WiFi work?}
+\label{subsec:How does WiFi work?}
+
+
 \subsection{What is the Internet of Things?}
 \label{subsec:What is the Internet of Things}
 
@@ -138,17 +142,9 @@ the internet using one of the aforementioned methods, and it is responsible for
 receiving the data from the perception layer device and transmitting it to the application
 layer, which could be a database to store the data, or a web application to display
 the data\cite{kumar2019internet}. These three theoretical layers are important in understanding the IoT,
-and how it can be used in wildlife tracking. The Wild-Fi biologging tag, which will be
-discussed later in this paper, is a prime example of how these three layers are implemented
-in a biologging device and is visually explained by figure ~\ref{fig:wild-fi_IoT_diagram}.
-\begin{figure}[htbp]
-  \centering
-  \fbox{\includegraphics[width=.9\columnwidth]{WildFi_IoT.jpg}}
-  \caption{Wild-fi IoT infrastructure overview}
-  \label{fig:wild-fi_IoT_diagram}
-\end{figure}
-\todo[inline, color=orange]{Include citation for the figure.}
-
+and how it can be used in wildlife tracking. The Wild-Fi biologging tag, is a prime example 
+of how these three layers are implemented in a biologging device and is visually explained 
+by figure ~\ref{fig:wild-fi_IoT_diagram}.
 
 \subsection{What are the Other Biologging Methods?}
 \label{subsec:What are the Other Biologging Methods?}
@@ -164,10 +160,9 @@ shows the 3D movement of a prairie dogs.
 \begin{figure}[htbp]
   \centering
   \fbox{\includegraphics[width=.9\columnwidth]{prairie_dog_map.jpg}}
-  \caption{3D movement of a prairie dog}
+  \caption{3D movement of a prairie dog \cite{Kidangoor_2024}}
   \label{fig:prairie_dog_3D_movement}
 \end{figure}
-\todo[inline, color=orange]{Include citation for the figure.}
 Most biologging trackers will implement these types of sensors, but the
 implementation of these sensors can vary greatly. More importantly, the
 communication of the data from these sensors can vary greatly. One of the
@@ -199,35 +194,146 @@ data over much longer distances.
 \label{subsec:The Sensor Device}
 
 
-\section{Data Transmission}
-\label{sec:Data Transmission}
-
-\section{Networking Protocols}
-\label{sec:Networking Protocols}
+\section{Networking}
+\label{sec:Networking}
 
 The networking of a IoT based biologging system is crucial in ensuring safe and
-efficient data transmission. The networking protocols used in a biologging system
+efficient data transmission. The networks used in a biologging system
 are responsible for transmitting data from the sensor device to the application
-layer, and they are also responsible for ensuring that the data is transmitted
+layer, and are also responsible for ensuring that the data is transmitted
 safely and securely. The two most popular types of networking protocols used in
-biologging systems are Low Power Wide Area Networks (LPWAN) and Cellular Networks.
+biologging systems are Low Power Wide Area Networks (LPWAN) and Traditional Wifi.
 These two types of networks have their own advantages and disadvantages, and
 the choice of which network to use is dependent on the specific use case. No
-matter what method is used, the networking protocols used in a biologging system
-must be able to transmit data over long distances, and they must be able to
-transmit data in a secure way. The security of the data is especially important
-in a biologging system, as the data being transmitted is often sensitive and
-can be used to track the location of an animal, which in the hand of an illegal
-hunter, could be disastrous.
+matter what method is used, the networking must be able to transmit data over 
+long distances, and they must be able to do so in a secure way. The security 
+of the data is especially important in a biologging system, as the data being 
+transmitted is often sensitive and can be used to track the location of an animal, 
+which in the hand of an illegal hunter, could be disastrous.
 
 \subsection{Low Power Wide Area Networks (LPWAN)}
 \label{subsec:Low Power Wide Area Networks (LPWAN)}
 
-\subsection{Cellular Networks}
-\label{subsec:Cellular Networks}
+LPWAN networks provide a few benefits compared to a traditional mesh wifi network, 
+the primary benefit being that LPWAN networks are able to transmit data over much 
+longer distances than a traditional mesh wifi network. This is especially important 
+in a biologging system, as the animals being tracked are often in vast, remote areas 
+where a 200m range would not be sufficient. LPWAN networks typically utilize sub 
+GHz frequencies and ultra-narrow band modulation to transmit data over long distances
+\cite{yousuf2018throughput}. Proprietary LPWAN networks like the SigFox network are 
+popular and designed to handle up to a million IoT devices using only a single gateway. 
+These services are subscription based, and the cost of the service is based on the 
+number of devices that are used in the network. On the other hand, there are LPWAN 
+standards that exist to allow in house development of an LPWAN network. The 
+LoRaWAN protocol is one of the most popular LPWAN standards, and it is used by 
+many to implement their own LPWAN networks\cite{LoRa_Alliance®_2023}. Both of these 
+network solutions are explored further in subsections \ref{subsec:SigFox} and 
+\ref{subsec:LoRaWAN}.
 
-\subsection{Protocol Comparison and Selection Criteria}
+\subsubsection{SigFox}
+\label{subsec:SigFox}
+
+The SigFox network is a proprietary LPWAN 
+network that is used for IoT systems, and it can be used to cover an area as 
+big as Belgium ($30,600 km^2$) with only seven base stations \cite{wild2023multi}. 
+The node device in a SigFox network is able to transmit 6 messages per hour, 
+each having a maximum size of 12 bytes. While 12 bytes may seem limiting, it is 
+sufficient for transmitting the GPS coordinates of an animal, as well as other 
+sensor data such as temperature\cite{wild2023multi}. The SigFox company also offers 
+the Atlas technology which uses the signal strength and location of the receiving 
+base station to calculate an approximate location of the node device, which frees up 
+the node device from having to explicitly send GPS data, allowing for other sensor data 
+to be sent instead\cite{wild2023multi}. 
+\begin{figure}[htbp]
+  \centering
+  \fbox{\includegraphics[width=.9\columnwidth]{SigfoxNetworkMap.jpg}}
+  \caption{SigFox network infrastructure\cite{wild2023multi}}
+  \label{fig:SigFox_infrastructure}
+\end{figure}
+Ultra-Narrow bands (UNB) are used in the SigFox 
+network and many other LPWAN networks, which allows for the transmission of data
+over long distances, and the use of UNB also allows for the use of low power
+transmitters, which is important in a biologging system, as the devices are
+often attached to animals and must be as small and light as possible.
+UNB works by using a low radio frequency(868.034MHz to 868.226MHz), and transmits data three 
+times on different channels at different times, which ensures a message is received 
+and robustness to interferences\cite{LavricSigfoxCommunication}. One of the greatest 
+benefits of UNB is that it allows for the use of low power transmitters, which are able 
+to have incredibly long battery lives. Using the specifications of SigFox's UNB 
+network, a node is able to send 140 packets per day, and the power consumption is 
+between 19 and 49 mA, two AAA batteries are able to power a node up to 6.5 years
+\cite{LavricSigfoxCommunication}. Because SigFox is a proprietary network, end users 
+do not maintain the base stations or connection to the SigFox cloud: they only need to 
+design their devices within the SigFox specifications and connect them to the SigFox network. 
+An overview of the SigFox infrastructure and how it can be applied to biologging 
+is shown in Figure ~\ref{fig:SigFox_infrastructure}.
+
+\subsubsection{LoRa}
+\label{subsec:LoRa}
+
+The LoRa and SigFox networks have many similarities in how they are structured 
+and operated, however there are some key differences. The transmission modulation 
+technique used by LoRa is called chirp spread spectrum, and it is slightly 
+different from SigFox's UNB modulation technique.
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\includegraphics[width=.9\columnwidth]{LoRa Network Stack.png}}
+  \caption{LoRaWAN network Stack\cite{LoRa_Alliance®_2023}}
+  \label{fig:LoRaWAN_network}
+\end{figure}
+
+\subsection{Traditional Wifi}
+\label{subsec:Traditional Wifi}
+
+A more traditional Wifi network is another method that is used by some companies to 
+implement biologging systems. There are some useful benefits to using a traditional 
+Wifi network over an alternative like LoRa or LPWAN; The biggest of which is data 
+transfer rate. However, because traditional Wifi uses 2.4/5/6 GHz, the range is much more limited 
+than that of a LPWAN network, and the power consumption is higher. The WildFi biologging system designed by 
+Timm Wild and his colleagues is just one example of a device that uses traditional 
+WLAN to collect data from a biologging device. Wild is also the leading member of the 
+team that studied the use of the SigFox network for a IoT based biologging system, and 
+claimed that the data transmission capacity was one of the reasons that they chose to 
+investigate the use of a traditional Wifi network for biologging\cite{wild2023internet}. 
+The WildFi tags and others like it, connect and communicate by using a traditional wireless 
+local area network (WLAN), which provides a versatile way for tags to offload collected data. 
+As seen in Figure ~\ref{fig:wild-fi_IoT_diagram}, the WildFi tag has the capability to 
+connect to a WLAN router, smartphone hotspot, specially designed gateway, and more.
+\begin{figure}[htbp]
+  \centering
+  \fbox{\includegraphics[width=.9\columnwidth]{WildFi_IoT.jpg}}
+  \caption{Wild-fi IoT infrastructure overview \cite{wild2023internet}}
+  \label{fig:wild-fi_IoT_diagram}
+\end{figure}
+When the tags establish a connection to one of these devices, data is packaged, encrypted, 
+and transmitted to the receiving device. From there, the data can either be stored on device 
+to be physically collected, or uploaded to a remote database. When connected to a ESP32 CAM 
+gateway and the data is stored locally, a transmission rate of 230 kByte/s can be achieved at 
+a distance up to 200m and only consume 108mA using a WildFi tag\cite{wild2023internet}. This 
+is more power consumption than a LPWAN based device, however the energy cost per byte 
+transmitted is lower than a LPWAN based device. Wild et. al claim that using a traditional 
+Wifi network with a logging device that has a 70mAh battery and a small solar panel, data can 
+be transmitted 24 hours a day for an entire lifetime of an animal\cite{wild2023internet}.
+
+
+\subsection{Comparison and Selection Criteria}
 \label{subsec:Protocol Comparison and Selection Criteria}
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\includegraphics[width=.9\columnwidth]{LPWANcomparrison.jpg}}
+  \caption{Respective advantages of Sigfox, LoRa, and NB-IoT in terms of IoT factors. \cite{mekki2019comparative}}
+  \label{fig:LPWAN_comparison}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\includegraphics[width=.9\columnwidth]{NetworkRangeDataRateGraph.jpg}}
+  \caption{Data rate vs range for different LPWAN technologies. \cite{evanczukspeed}}
+  \label{fig:LPWAN_data_rate_range}
+\end{figure}
+
 
 \subsection{Security Protocols}
 \label{subsec:Security Protocols}
