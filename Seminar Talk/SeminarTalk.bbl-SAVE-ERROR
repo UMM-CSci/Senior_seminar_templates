@@ -1,0 +1,290 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{boyd2004bio}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=0d83023ba4256796f184aa0b7b23bbc4}{%
+           family={Boyd},
+           familyi={B\bibinitperiod},
+           given={Ian\bibnamedelima L.},
+           giveni={I\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=d81714b84067b4f7b7aeae46767986f7}{%
+           family={Kato},
+           familyi={K\bibinitperiod},
+           given={Akiko},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4b3bc3c0093564e3e1f36e5c8eeb3ae1}{%
+           family={Ropert-Coudert},
+           familyi={R\bibinithyphendelim C\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{c31c257b00eecf112e3a4937ca090310}
+      \strng{fullhash}{c31c257b00eecf112e3a4937ca090310}
+      \strng{fullhashraw}{c31c257b00eecf112e3a4937ca090310}
+      \strng{bibnamehash}{c31c257b00eecf112e3a4937ca090310}
+      \strng{authorbibnamehash}{c31c257b00eecf112e3a4937ca090310}
+      \strng{authornamehash}{c31c257b00eecf112e3a4937ca090310}
+      \strng{authorfullhash}{c31c257b00eecf112e3a4937ca090310}
+      \strng{authorfullhashraw}{c31c257b00eecf112e3a4937ca090310}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Memoirs of National Institute of Polar Research. Special issue}
+      \field{month}{3}
+      \field{title}{Bio-logging science: sensing beyond the boundaries}
+      \field{volume}{58}
+      \field{year}{2004}
+      \field{pages}{1\bibrangedash 14}
+      \range{pages}{14}
+    \endentry
+    \entry{Calihman_2021}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c819ec1766d756173759665ce488001c}{%
+           family={Calihman},
+           familyi={C\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c819ec1766d756173759665ce488001c}
+      \strng{fullhash}{c819ec1766d756173759665ce488001c}
+      \strng{fullhashraw}{c819ec1766d756173759665ce488001c}
+      \strng{bibnamehash}{c819ec1766d756173759665ce488001c}
+      \strng{authorbibnamehash}{c819ec1766d756173759665ce488001c}
+      \strng{authornamehash}{c819ec1766d756173759665ce488001c}
+      \strng{authorfullhash}{c819ec1766d756173759665ce488001c}
+      \strng{authorfullhashraw}{c819ec1766d756173759665ce488001c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NetBurner, Inc}
+      \field{month}{8}
+      \field{title}{IOT architectures - common approaches and ways to design IOT at scale}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.netburner.com/learn/architectural-frameworks-in-the-iot-civilization/
+      \endverb
+      \verb{url}
+      \verb https://www.netburner.com/learn/architectural-frameworks-in-the-iot-civilization/
+      \endverb
+    \endentry
+    \entry{AMdata}{misc}{}{}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{How is data put on radio waves?}
+      \field{title}{How is data put on radio waves?}
+      \verb{urlraw}
+      \verb https://www.qrg.northwestern.edu/projects/vss/docs/communications/1-how-is-data-put-on-radio-waves.html
+      \endverb
+      \verb{url}
+      \verb https://www.qrg.northwestern.edu/projects/vss/docs/communications/1-how-is-data-put-on-radio-waves.html
+      \endverb
+    \endentry
+    \entry{Kidangoor_2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=a57eb7a4efba1097aa60433d07635bd9}{%
+           family={Kidangoor},
+           familyi={K\bibinitperiod},
+           given={Abhishyant},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a57eb7a4efba1097aa60433d07635bd9}
+      \strng{fullhash}{a57eb7a4efba1097aa60433d07635bd9}
+      \strng{fullhashraw}{a57eb7a4efba1097aa60433d07635bd9}
+      \strng{bibnamehash}{a57eb7a4efba1097aa60433d07635bd9}
+      \strng{authorbibnamehash}{a57eb7a4efba1097aa60433d07635bd9}
+      \strng{authornamehash}{a57eb7a4efba1097aa60433d07635bd9}
+      \strng{authorfullhash}{a57eb7a4efba1097aa60433d07635bd9}
+      \strng{authorfullhashraw}{a57eb7a4efba1097aa60433d07635bd9}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mongabay Environmental News}
+      \field{month}{3}
+      \field{title}{New trackers bring Prairie Dogs’ little-known underground life to light}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://news.mongabay.com/2024/03/new-trackers-bring-prairie-dogs-little-known-underground-life-to-light/#:~:text=While%20accelerometers%20measure%20if%20and,the%20direction%20of%20their%20movements.
+      \endverb
+      \verb{url}
+      \verb https://news.mongabay.com/2024/03/new-trackers-bring-prairie-dogs-little-known-underground-life-to-light/#:~:text=While%20accelerometers%20measure%20if%20and,the%20direction%20of%20their%20movements.
+      \endverb
+    \endentry
+    \entry{Martin_2006}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=237d733314948ff57df18590bde4f0ee}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={Glen},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SFGATE}%
+      }
+      \strng{namehash}{237d733314948ff57df18590bde4f0ee}
+      \strng{fullhash}{237d733314948ff57df18590bde4f0ee}
+      \strng{fullhashraw}{237d733314948ff57df18590bde4f0ee}
+      \strng{bibnamehash}{237d733314948ff57df18590bde4f0ee}
+      \strng{authorbibnamehash}{237d733314948ff57df18590bde4f0ee}
+      \strng{authornamehash}{237d733314948ff57df18590bde4f0ee}
+      \strng{authorfullhash}{237d733314948ff57df18590bde4f0ee}
+      \strng{authorfullhashraw}{237d733314948ff57df18590bde4f0ee}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SAN JOSE / In studying pollution, this professor will wing it / UC Irvine scientist to equip pigeons for smog blogs}
+      \field{month}{2}
+      \field{title}{San Jose / in studying pollution, this professor will wing it / ...}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://www.sfgate.com/bayarea/article/SAN-JOSE-In-studying-pollution-this-professor-2542456.php
+      \endverb
+      \verb{url}
+      \verb https://www.sfgate.com/bayarea/article/SAN-JOSE-In-studying-pollution-this-professor-2542456.php
+      \endverb
+    \endentry
+    \entry{CenturyLink}{misc}{}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{CenturyLink}
+      \field{title}{The difference between 2.4 GHz and 5 GHz WiFi}
+      \verb{urlraw}
+      \verb https://www.centurylink.com/home/help/internet/wireless/which-frequency-should-you-use.html
+      \endverb
+      \verb{url}
+      \verb https://www.centurylink.com/home/help/internet/wireless/which-frequency-should-you-use.html
+      \endverb
+    \endentry
+    \entry{WiFiFreqImOn}{misc}{}{}
+      \list{publisher}{1}{%
+        {ImOn Communications}%
+      }
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Wi-Fi Frequencies Explained}
+      \field{title}{Wi-Fi Frequencies Explained}
+      \verb{urlraw}
+      \verb https://www.imon.net/imon-difference/news-events/wi-fi-frequencies-explained
+      \endverb
+      \verb{url}
+      \verb https://www.imon.net/imon-difference/news-events/wi-fi-frequencies-explained
+      \endverb
+    \endentry
+    \entry{wild2023multi}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=d742f934f86bd9607801c77b673775a8}{%
+           family={Wild},
+           familyi={W\bibinitperiod},
+           given={Timm\bibnamedelima A},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=c2954b955bf11cb88e99f581d0955cc5}{%
+           family={Schalkwyk},
+           familyi={S\bibinitperiod},
+           given={Louis},
+           giveni={L\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=fe18885f478002da0b9235d44bfd4baf}{%
+           family={Viljoen},
+           familyi={V\bibinitperiod},
+           given={Pauli},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4e562e8a1d0b665d9742cda581d924a8}{%
+           family={Heine},
+           familyi={H\bibinitperiod},
+           given={Georg},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e32a3505a13487ef21e072110aae0dae}{%
+           family={Richter},
+           familyi={R\bibinitperiod},
+           given={Nina},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d0de997bc46bc751ab730148299de159}{%
+           family={Vorneweg},
+           familyi={V\bibinitperiod},
+           given={Bernd},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1a2c7c9a82ad7029425ed9095e676d3e}{%
+           family={Koblitz},
+           familyi={K\bibinitperiod},
+           given={Jens\bibnamedelima C},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=5d6a067dd583d316467c8f92ebabb85f}{%
+           family={Dechmann},
+           familyi={D\bibinitperiod},
+           given={Dina\bibnamedelima KN},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=44dc25078419f1d85104a0ccef27f60e}{%
+           family={Rogers},
+           familyi={R\bibinitperiod},
+           given={Will},
+           giveni={W\bibinitperiod}}}%
+        {{hash=abc98d661212e1dccccbb1b9ef5d5ff6}{%
+           family={Partecke},
+           familyi={P\bibinitperiod},
+           given={Jesko},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {BioMed Central}%
+      }
+      \strng{namehash}{33c5c575090167694689703ecc329bc3}
+      \strng{fullhash}{3fd5efa8a5d3a0eb95ad5211488c4737}
+      \strng{fullhashraw}{3fd5efa8a5d3a0eb95ad5211488c4737}
+      \strng{bibnamehash}{33c5c575090167694689703ecc329bc3}
+      \strng{authorbibnamehash}{33c5c575090167694689703ecc329bc3}
+      \strng{authornamehash}{33c5c575090167694689703ecc329bc3}
+      \strng{authorfullhash}{3fd5efa8a5d3a0eb95ad5211488c4737}
+      \strng{authorfullhashraw}{3fd5efa8a5d3a0eb95ad5211488c4737}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Animal Biotelemetry}
+      \field{number}{1}
+      \field{title}{A multi-species evaluation of digital wildlife monitoring using the Sigfox IoT network}
+      \field{volume}{11}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 17}
+      \range{pages}{17}
+      \verb{doi}
+      \verb https://doi.org/10.1186/s40317-023-00326-1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1186/s40317-023-00326-1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1186/s40317-023-00326-1
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
