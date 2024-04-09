@@ -19,6 +19,22 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{Sigfox_0G_Technology_2024}{misc}{}{}
+      \list{publisher}{1}{%
+        {Sigfox}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{journaltitle}{Sigfox 0G Technology}
+      \field{month}{3}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.sigfox.com/coverage/
+      \endverb
+      \verb{url}
+      \verb https://www.sigfox.com/coverage/
+      \endverb
+    \endentry
     \entry{boyd2004bio}{article}{}{}
       \name{author}{3}{}{%
         {{hash=0d83023ba4256796f184aa0b7b23bbc4}{%
@@ -57,6 +73,19 @@
       \field{pages}{1\bibrangedash 14}
       \range{pages}{14}
     \endentry
+    \entry{DIYLoRa}{misc}{}{}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Things Network}
+      \field{title}{Build your own gateway}
+      \verb{urlraw}
+      \verb https://www.thethingsnetwork.org/docs/gateways/start/build/
+      \endverb
+      \verb{url}
+      \verb https://www.thethingsnetwork.org/docs/gateways/start/build/
+      \endverb
+    \endentry
     \entry{Calihman_2021}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=c819ec1766d756173759665ce488001c}{%
@@ -87,6 +116,76 @@
       \verb{url}
       \verb https://www.netburner.com/learn/architectural-frameworks-in-the-iot-civilization/
       \endverb
+    \endentry
+    \entry{LoRaNetworkFernandez}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=a6ce2d2659a161eacd4924d0d4b5c606}{%
+           family={Fernandez},
+           familyi={F\bibinitperiod},
+           given={Lara},
+           giveni={L\bibinitperiod}}}%
+        {{hash=97b30c041e395c2b02831b2e40645fc4}{%
+           family={Ruiz-de-Azua},
+           familyi={R\bibinithyphendelim A\bibinitperiod},
+           given={Joan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=11e3d524d93aa1f69f9eca86412c8d62}{%
+           family={Calveras},
+           familyi={C\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b62a994ff2d867ce76348dc1e5881912}{%
+           family={Camps},
+           familyi={C\bibinitperiod},
+           given={Adriano},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{b3b94882ce2a914204a34decbc0b3ec4}
+      \strng{fullhash}{abf4f5233631420586e70411780471b5}
+      \strng{fullhashraw}{abf4f5233631420586e70411780471b5}
+      \strng{bibnamehash}{b3b94882ce2a914204a34decbc0b3ec4}
+      \strng{authorbibnamehash}{b3b94882ce2a914204a34decbc0b3ec4}
+      \strng{authornamehash}{b3b94882ce2a914204a34decbc0b3ec4}
+      \strng{authorfullhash}{abf4f5233631420586e70411780471b5}
+      \strng{authorfullhashraw}{abf4f5233631420586e70411780471b5}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{month}{01}
+      \field{title}{Assessing LoRa for Satellite-to-Earth Communications Considering the Impact of Ionospheric Scintillation}
+      \field{volume}{8}
+      \field{year}{2020}
+      \field{pages}{165570\bibrangedash 165582}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2020.3022433
+      \endverb
+    \endentry
+    \entry{ghoslya2017lora}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=7c5026d36168f06c9714e54bbfad4dbf}{%
+           family={Ghoslya},
+           familyi={G\bibinitperiod},
+           given={Sakshama},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c5026d36168f06c9714e54bbfad4dbf}
+      \strng{fullhash}{7c5026d36168f06c9714e54bbfad4dbf}
+      \strng{fullhashraw}{7c5026d36168f06c9714e54bbfad4dbf}
+      \strng{bibnamehash}{7c5026d36168f06c9714e54bbfad4dbf}
+      \strng{authorbibnamehash}{7c5026d36168f06c9714e54bbfad4dbf}
+      \strng{authornamehash}{7c5026d36168f06c9714e54bbfad4dbf}
+      \strng{authorfullhash}{7c5026d36168f06c9714e54bbfad4dbf}
+      \strng{authorfullhashraw}{7c5026d36168f06c9714e54bbfad4dbf}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{All About LoRa and LoRaWAN}
+      \field{title}{LoRa: Symbol Generation}
+      \field{year}{2017}
     \endentry
     \entry{AMdata}{misc}{}{}
       \field{sortinit}{H}
@@ -164,6 +263,19 @@
       \endverb
       \verb{url}
       \verb https://www.sfgate.com/bayarea/article/SAN-JOSE-In-studying-pollution-this-professor-2542456.php
+      \endverb
+    \endentry
+    \entry{SIGFOXsignalwiki}{misc}{}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Signal Identification Wiki}
+      \field{title}{SIGFOX - Signal Identification Wiki}
+      \verb{urlraw}
+      \verb https://www.sigidwiki.com/wiki/SIGFOX
+      \endverb
+      \verb{url}
+      \verb https://www.sigidwiki.com/wiki/SIGFOX
       \endverb
     \endentry
     \entry{CenturyLink}{misc}{}{}

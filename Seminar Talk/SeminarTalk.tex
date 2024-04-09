@@ -30,7 +30,7 @@
 
 \begin{frame}
   \frametitle{Outline}
-  \tableofcontents
+  \tableofcontents[sectionstyle=show,subsectionstyle=hide]
 \end{frame}
 
 % Section and subsections will appear in the presentation overview and table of contents.
@@ -241,29 +241,206 @@
 
 
 \section{Components of a Modern Biologging System}
-\subsection{Sensor Devices}
-\subsection{Base Stations}
 
-\begin{frame}{Components of a Modern Biologging System}
-  \frametitle{Sensor Devices}
-  \frametitle{Base Stations}
-\end{frame}
+\subsection{Sensor Devices}
+  \begin{frame}{Components of a Modern Biologging System}
+    \frametitle{Sensor Devices}
+  \end{frame}
+
+\subsection{Base Stations}
+  \begin{frame}{Components of a Modern Biologging System}
+    \frametitle{Base Stations}
+  \end{frame}
+
+
 
 
 \section{Networking}
-\subsection{LPWAN}
-\subsection{LoRaWAN}
-\subsection{Traditional Wifi}
+
+\subsection{Networking Outline}
+  \begin{frame}{Networking}
+    \frametitle{Networking Outline}
+    \begin{itemize}
+      \item Importance of a Strong Network for Biologging
+      \item LPWAN Networks
+      \begin{itemize}
+        \item SigFox
+        \item LoRa
+      \end{itemize}
+      \item WLAN Networks
+      \item Security of LPWAN and WLAN Networks
+      \item Which Network is Best for Biologging?
+    \end{itemize}
+  \end{frame}
+
+
+\subsection{Importance of a Strong Network}
+  \begin{frame}{Networking}
+    \frametitle{Importance of a Strong Network for Biologging}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item Data must be transmitted safely and securely
+          \item Responsible for sending data to and from sensor device to application layer
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{StrongNetwork.jpg}
+          \caption{Cartoon depiction of a strong wireless network.[DALL$\cdot$E 3]}
+          \label{fig:Strong_wireless_network}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+\subsection{LPWAN Networks}
+
+  \begin{frame}{Networking}
+    \frametitle{LPWAN Overview}
+    \begin{columns}
+      \begin{column}{0.4\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{LPWAN-technologies-network-architecture.png}
+          \caption{LPWAN technologies network architecture.\cite{LoRaNetworkFernandez}}
+          \label{fig:LPWAN_Network_architecture}
+        \end{figure}
+      \end{column}
+      \begin{column}{0.6\textwidth}
+        \begin{itemize}
+          \item \b{L}ow \b{P}ower \b{W}ide \b{A}rea \b{N}etwork
+          \item Utilizes unlicensed Industrial, Scientific and Medical radio bands (ISM)
+          \item 433MHz-928MHz Depending on region (U.S. 915MHz)
+          \item Very long range (40km+)
+          \item Very low power consumption
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{Networking}
+    \frametitle{SigFox LPWAN Capabilities}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item 140 messages/day (12bytes each)
+          \item 40km+ of range depending on environment
+          \item SigFox Atlas technology for estimating location
+          \item 6.5yr battery life w/ 2 AAA batteries (more with solar panel)
+          \item Up to 100bps
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{SigFoxCoverage.png}
+          \caption{SigFox Europe Coverage.\cite{Sigfox_0G_Technology_2024}}
+          \label{fig:SigFox_Coverage}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{Networking}
+    \frametitle{SigFox LPWAN Operation}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{Sigfox_Spectrum_Analysis.jpg}
+          \caption{SigFox frequency hopping modulation.\cite{SIGFOXsignalwiki}}
+          \label{fig:SigFox_Spectrum}
+        \end{figure}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item Transmission modulation
+          \begin{itemize}
+            \item transmits message 3 times
+            \item pseudo randomly hops to new frequency
+          \end{itemize}
+          \item Proprietary base stations and framework
+          \item Subscription based connection to network
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{Networking}
+    \frametitle{LoRa LPWAN Capabilities}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item Unlimited messages/day
+          \item Easier to develop and implement
+          \item 20km+ of range depending on environment
+          \item Up to 50kbps
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{DIYloraGateway.jpg}
+          \caption{DIY LoRa gateway w/ Raspberry Pi.\cite{DIYLoRa}}
+          \label{fig:DIY_LoRa_Gateway}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{Networking}
+    \frametitle{LoRa LPWAN Operation}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{Chirp.png}
+          \caption{CHIRP Spread Spectrum modulation SF7-SF12.\cite{ghoslya2017lora}}
+          \label{fig:CHIRP_Spread_Spectrum}
+        \end{figure}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item CHIRP (Compressed High Intensity Radar Pulse) Spread Spectrum
+          \begin{itemize}
+            \item gradually raises/lowers frequencies
+            \item $\uparrow$ SF $\rightarrow$ $\downarrow$ modulation rates
+          \end{itemize}
+          \item Standards based system
+          \item Private or public networks
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{Networking}
+    \frametitle{WLAN Capabilities}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item 200m+ of range depending on environment
+          \item Unlimited messages/day
+          \item Can be entirely self developed
+          \item 1840kbps+ (depending on implementation)
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{DIYloraGateway.jpg}
+          \caption{DIY LoRa gateway w/ Raspberry Pi.\cite{DIYLoRa}}
+          \label{fig:DIY_LoRa_Gateway}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
 \subsection{Comparisons}
 \subsection{Security}
 
-\begin{frame}{Networking}
-  \frametitle{LPWAN}
-  \frametitle{LoRaWAN}
-  \frametitle{Traditional Wifi}
-  \frametitle{Comparisons}
-  \frametitle{Security}
-\end{frame}
+
 
 \section{Challenges to Overcome}
 \subsection{Power Consumption}
@@ -276,7 +453,8 @@
   \frametitle{Cost}
 \end{frame}
 
-\begin{frame}{References}
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
   \printbibliography
 \end{frame}
 
