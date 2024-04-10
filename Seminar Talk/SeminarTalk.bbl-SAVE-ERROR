@@ -35,6 +35,71 @@
       \verb https://www.sigfox.com/coverage/
       \endverb
     \endentry
+    \entry{Beschokov}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9ab631b709fc6ba4e3a6ecd2104db147}{%
+           family={Beschokov},
+           familyi={B\bibinitperiod},
+           given={Mukhadin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ab631b709fc6ba4e3a6ecd2104db147}
+      \strng{fullhash}{9ab631b709fc6ba4e3a6ecd2104db147}
+      \strng{fullhashraw}{9ab631b709fc6ba4e3a6ecd2104db147}
+      \strng{bibnamehash}{9ab631b709fc6ba4e3a6ecd2104db147}
+      \strng{authorbibnamehash}{9ab631b709fc6ba4e3a6ecd2104db147}
+      \strng{authornamehash}{9ab631b709fc6ba4e3a6ecd2104db147}
+      \strng{authorfullhash}{9ab631b709fc6ba4e3a6ecd2104db147}
+      \strng{authorfullhashraw}{9ab631b709fc6ba4e3a6ecd2104db147}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{wallarm}
+      \field{title}{What is Advanced Encryption Standard (AES)?}
+      \verb{urlraw}
+      \verb https://www.wallarm.com/what/what-is-aes-advanced-encryption-standard
+      \endverb
+      \verb{url}
+      \verb https://www.wallarm.com/what/what-is-aes-advanced-encryption-standard
+      \endverb
+    \endentry
+    \entry{bidgoly2019novel}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=6e41bbf7ba8295e692ce32131d34e6c4}{%
+           family={Bidgoly},
+           familyi={B\bibinitperiod},
+           given={Amir\bibnamedelima Jalaly},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=5b14407b1b2047fe6fe0a77723502517}{%
+           family={Bidgoly},
+           familyi={B\bibinitperiod},
+           given={Hamed\bibnamedelima Jalaly},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6f7577a9860ac302ffed04b8746ab2ee}
+      \strng{fullhash}{6f7577a9860ac302ffed04b8746ab2ee}
+      \strng{fullhashraw}{6f7577a9860ac302ffed04b8746ab2ee}
+      \strng{bibnamehash}{6f7577a9860ac302ffed04b8746ab2ee}
+      \strng{authorbibnamehash}{6f7577a9860ac302ffed04b8746ab2ee}
+      \strng{authornamehash}{6f7577a9860ac302ffed04b8746ab2ee}
+      \strng{authorfullhash}{6f7577a9860ac302ffed04b8746ab2ee}
+      \strng{authorfullhashraw}{6f7577a9860ac302ffed04b8746ab2ee}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Sensors Journal}
+      \field{number}{16}
+      \field{title}{A novel chaining encryption algorithm for LPWAN IoT network}
+      \field{volume}{19}
+      \field{year}{2019}
+      \field{pages}{7027\bibrangedash 7034}
+      \range{pages}{8}
+    \endentry
     \entry{boyd2004bio}{article}{}{}
       \name{author}{3}{}{%
         {{hash=0d83023ba4256796f184aa0b7b23bbc4}{%
@@ -116,6 +181,31 @@
       \verb{url}
       \verb https://www.netburner.com/learn/architectural-frameworks-in-the-iot-civilization/
       \endverb
+    \endentry
+    \entry{evanczukspeed}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=8703c01b267afb7d393c9e4aae314da6}{%
+           family={Evanczuk},
+           familyi={E\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Obtenido de https://www. digikey. com/en/articles/techzone/2018/jun/speed~…}%
+      }
+      \strng{namehash}{8703c01b267afb7d393c9e4aae314da6}
+      \strng{fullhash}{8703c01b267afb7d393c9e4aae314da6}
+      \strng{fullhashraw}{8703c01b267afb7d393c9e4aae314da6}
+      \strng{bibnamehash}{8703c01b267afb7d393c9e4aae314da6}
+      \strng{authorbibnamehash}{8703c01b267afb7d393c9e4aae314da6}
+      \strng{authornamehash}{8703c01b267afb7d393c9e4aae314da6}
+      \strng{authorfullhash}{8703c01b267afb7d393c9e4aae314da6}
+      \strng{authorfullhashraw}{8703c01b267afb7d393c9e4aae314da6}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Speed Development of Secure Cellular Connected IoT Applications}
     \endentry
     \entry{LoRaNetworkFernandez}{article}{}{}
       \name{author}{4}{}{%
@@ -265,6 +355,52 @@
       \verb https://www.sfgate.com/bayarea/article/SAN-JOSE-In-studying-pollution-this-professor-2542456.php
       \endverb
     \endentry
+    \entry{mekki2019comparative}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=d1a708ffba3387c2b5e00c0ebb3e0efd}{%
+           family={Mekki},
+           familyi={M\bibinitperiod},
+           given={Kais},
+           giveni={K\bibinitperiod}}}%
+        {{hash=bc427dc397c00b0b763c9d11c5c7392b}{%
+           family={Bajic},
+           familyi={B\bibinitperiod},
+           given={Eddy},
+           giveni={E\bibinitperiod}}}%
+        {{hash=21047b37892ac99472ca2731b68eb8b5}{%
+           family={Chaxel},
+           familyi={C\bibinitperiod},
+           given={Frederic},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6806b25b3cb3dab0e92c2fe7c2e25565}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Fernand},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{3600fa5777c79f76bcd4a92ff7e94b8d}
+      \strng{fullhash}{fd7ae23de5e53d2604e8aeb59c1e9354}
+      \strng{fullhashraw}{fd7ae23de5e53d2604e8aeb59c1e9354}
+      \strng{bibnamehash}{3600fa5777c79f76bcd4a92ff7e94b8d}
+      \strng{authorbibnamehash}{3600fa5777c79f76bcd4a92ff7e94b8d}
+      \strng{authornamehash}{3600fa5777c79f76bcd4a92ff7e94b8d}
+      \strng{authorfullhash}{fd7ae23de5e53d2604e8aeb59c1e9354}
+      \strng{authorfullhashraw}{fd7ae23de5e53d2604e8aeb59c1e9354}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ICT express}
+      \field{number}{1}
+      \field{title}{A comparative study of LPWAN technologies for large-scale IoT deployment}
+      \field{volume}{5}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 7}
+      \range{pages}{7}
+    \endentry
     \entry{SIGFOXsignalwiki}{misc}{}{}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
@@ -375,6 +511,7 @@
       \strng{authornamehash}{33c5c575090167694689703ecc329bc3}
       \strng{authorfullhash}{3fd5efa8a5d3a0eb95ad5211488c4737}
       \strng{authorfullhashraw}{3fd5efa8a5d3a0eb95ad5211488c4737}
+      \field{extraname}{1}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
@@ -394,6 +531,82 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1186/s40317-023-00326-1
+      \endverb
+    \endentry
+    \entry{wild2023internet}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=d742f934f86bd9607801c77b673775a8}{%
+           family={Wild},
+           familyi={W\bibinitperiod},
+           given={Timm\bibnamedelima A},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=02af1dbea7c010cf0c03b553153d77c3}{%
+           family={Wikelski},
+           familyi={W\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3163415e4d7315d77eb2f8ea48b2e03a}{%
+           family={Tyndel},
+           familyi={T\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c66672bf1a9d6c850d38fdffa0213b3c}{%
+           family={Alarcón-Nieto},
+           familyi={A\bibinithyphendelim N\bibinitperiod},
+           given={Gustavo},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8cec99f11ba8137ad7911f80e27eae5e}{%
+           family={Klump},
+           familyi={K\bibinitperiod},
+           given={Barbara\bibnamedelima C},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=9476fa8b483a5be918964edd8defa7c8}{%
+           family={Aplin},
+           familyi={A\bibinitperiod},
+           given={Lucy\bibnamedelima M},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1a5d64549a0f7cb617a32c023a98424b}{%
+           family={Meboldt},
+           familyi={M\bibinitperiod},
+           given={Mirko},
+           giveni={M\bibinitperiod}}}%
+        {{hash=33fa4bfe7aa456ef5e1089cdd436b0ba}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Hannah\bibnamedelima J},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{33c5c575090167694689703ecc329bc3}
+      \strng{fullhash}{efe7c750483261bf6d214bf0a25e0c59}
+      \strng{fullhashraw}{efe7c750483261bf6d214bf0a25e0c59}
+      \strng{bibnamehash}{33c5c575090167694689703ecc329bc3}
+      \strng{authorbibnamehash}{33c5c575090167694689703ecc329bc3}
+      \strng{authornamehash}{33c5c575090167694689703ecc329bc3}
+      \strng{authorfullhash}{efe7c750483261bf6d214bf0a25e0c59}
+      \strng{authorfullhashraw}{efe7c750483261bf6d214bf0a25e0c59}
+      \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Methods in Ecology and Evolution}
+      \field{number}{1}
+      \field{title}{Internet on animals: Wi-Fi-enabled devices provide a solution for big data transmission in biologging}
+      \field{volume}{14}
+      \field{year}{2023}
+      \field{pages}{87\bibrangedash 102}
+      \range{pages}{16}
+      \verb{doi}
+      \verb https://doi.org/10.1111/2041-210X.13798
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1111/2041-210X.13798
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1111/2041-210X.13798
       \endverb
     \endentry
   \enddatalist

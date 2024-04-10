@@ -9,6 +9,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{times}
 \usepackage[T1]{fontenc}
+\usepackage{fontawesome}
 \usepackage[backend=biber, style=numeric]{biblatex}
 \addbibresource{SeminarTalk.bib}
 
@@ -27,6 +28,16 @@
 \begin{frame}
   \titlepage
 \end{frame}
+
+\begin{frame}
+  \frametitle{Hypothetical Scenario}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[height=.8\textheight]{Biologging_scenario.jpg}
+    \label{fig:Hypothetical_biologging}
+  \end{figure}
+\end{frame}
+
 
 \begin{frame}
   \frametitle{Outline}
@@ -243,8 +254,45 @@
 \section{Components of a Modern Biologging System}
 
 \subsection{Sensor Devices}
+
   \begin{frame}{Components of a Modern Biologging System}
     \frametitle{Sensor Devices}
+    \begin{figure}[htbp]
+      \centering
+      \includegraphics[width=\textwidth]{SigFox_Sensor_device.png}
+      \caption{SigFox Biologging Sensor Device.\cite{wild2023multi}}
+      \label{fig:SigFox_Biologging_device}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}{Components of a Modern Biologging System}
+    \frametitle{Sensor Devices}
+    \begin{columns}
+      \begin{column}{.5\textwidth}
+        \begin{itemize}
+          \item Required Components
+          \begin{itemize}
+            \item Antenna
+            \item Microcontroller
+            \item Battery
+            \item Sensor(s)
+          \end{itemize}
+          \item Optional Components
+          \begin{itemize}
+            \item Solar panel
+            \item Extra storage
+          \end{itemize}
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[height=.6\textheight]{Solar_collar.jpg}
+          \caption{Animal wearing a solar powered biologging collar, looking majestic. [DALL$\cdot$E 3]}
+          \label{fig:Solar_collar}
+        \end{figure}
+    \end{column}
+    \end{columns}
   \end{frame}
 
 \subsection{Base Stations}
@@ -255,7 +303,7 @@
 
 
 
-\section{Networking}
+\section{Networks for a Biologging System}
 
 \subsection{Networking Outline}
   \begin{frame}{Networking}
@@ -422,35 +470,202 @@
         \begin{itemize}
           \item 200m+ of range depending on environment
           \item Unlimited messages/day
-          \item Can be entirely self developed
+          \item 24/7 data transmission
           \item 1840kbps+ (depending on implementation)
+          \item Can use any 2.4GHz network
         \end{itemize}
       \end{column}
       \begin{column}{0.5\textwidth}
         \begin{figure}[htbp]
           \centering
-          \includegraphics[width=\textwidth]{DIYloraGateway.jpg}
-          \caption{DIY LoRa gateway w/ Raspberry Pi.\cite{DIYLoRa}}
-          \label{fig:DIY_LoRa_Gateway}
+          \includegraphics[width=\textwidth]{WildFi_IoT.jpg}
+          \caption{WildFi infrastructure overview.\cite{wild2023internet}}
+          \label{fig:WildFi_infrastructure_overview}
         \end{figure}
       \end{column}
     \end{columns}
   \end{frame}
 
-\subsection{Comparisons}
+  \begin{frame}{Networking}
+    \frametitle{WLAN Operation}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{WildFi_Tag.jpg}
+          \caption{WildFi tag with GPS extension and solar panel.\cite{wild2023internet}}
+          \label{fig:WildFi_Tag}
+        \end{figure}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item Can be entirely self developed
+          \item Can last an animals lifetime with solar
+          \item Cheap, Open Source, common hardware
+          \item Maintained entirely by user
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
 \subsection{Security}
 
+  \begin{frame}{Security}
+    \frametitle{SigFox and LoRa Security}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item SigFox and LoRa use AES-128
+          \item End-to-End encryption
+          \item Encrypted at the source (sensor device)
+          \item Per device keys for physical protection
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{Model-of-LPWAN-Chaining-Encryption.png}
+          \caption{Model of LPWAN Chaining Encryption.\cite{bidgoly2019novel}}
+          \label{fig:LPWAN_encryption}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  \end{frame}
 
+  \begin{frame}{Security}
+    \frametitle{WildFi (WLAN) Security}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item WildFi use WPA2/HTTPS $\rightarrow$ AES-128
+          \item End-to-End encryption
+          \item Depends on individual implementation
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{wireless-router-security.png}
+          \label{fig:Wifi_security}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  \end{frame}
 
-\section{Challenges to Overcome}
-\subsection{Power Consumption}
-\subsection{Range}
-\subsection{Cost}
+  \begin{frame}{Security}
+    \frametitle{Why Use AES-128?}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=\textwidth]{AES128_structure.png}
+          \caption{AES Design.\cite{Beschokov}}
+          \label{fig:AES_Design}
+        \end{figure}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item Proven track record
+          \item Secures data over the air
+          \item Small 128bit encryption keys
+          \item Not computationally expensive
+          \item \faThumbsOUp$ $ Security on battery powered devices
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{frame}
 
-\begin{frame}{Challenges to Overcome}
-  \frametitle{Power Consumption}
-  \frametitle{Range}
-  \frametitle{Cost}
+\subsection{Comparisons}
+
+\begin{frame}{Comapisons}
+  \frametitle{LPWAN Network Comparisons}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item SigFox
+        \begin{itemize}
+          \item Better range and coverage
+          \item Worse latency and payload
+        \end{itemize}
+        \item LoRa
+        \begin{itemize}
+          \item Easier to deploy (Private)
+          \item Less data restrictions
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=\textwidth]{LPWAN_comparisons.png}
+        \caption{LPWAN Comparisons.\cite{mekki2019comparative}}
+        \label{fig:LPWAN_Comparisons_map}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Comparisons}
+  \frametitle{LPWAN vs WLAN}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=\textwidth]{NetworkRangeDataRateGraph.jpg}
+        \caption{Data Rate vs Range.\cite{evanczukspeed}}
+        \label{fig:Network_range_graph}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Cost: LoRa \& WLAN $<$ SigFox
+        \item Range: LoRa \& SigFox $<$ WLAN
+        \item Battery Life: LoRa $\approx$ SigFox $\approx$ WLAN
+        \item Data Rate: WLAN $>$ LoRa $>$ SigFox
+        \item Security: LoRa $\approx$ SigFox $\approx$ WLAN
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+  \frametitle{IoT for Biologging}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item More, diverse data can be sent
+        \item Highly customizable
+        \item Many different options to choose from
+        \item Lasts for a lifetime
+        \item Less disruptive
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=.9\textwidth]{IoT_Lion.jpg}
+        \caption{IoT sensor device on an animal in the wild. [DALL$\cdot$E 3]}
+        \label{fig:IoT_Lion}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Questions}
+
+\begin{frame}{Questions}
+  \centering \Large
+  \emph{Thanks for Listening!}
+
+  Any Questions?
+
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[height=.6\textheight]{Thank_you.jpg}
+    \label{fig:Thank_you}
+  \end{figure}
 \end{frame}
 
 \begin{frame}[allowframebreaks]
