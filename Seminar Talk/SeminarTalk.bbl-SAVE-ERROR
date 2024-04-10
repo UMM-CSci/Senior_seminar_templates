@@ -401,6 +401,38 @@
       \field{pages}{1\bibrangedash 7}
       \range{pages}{7}
     \endentry
+    \entry{miyajima_2020}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=e6bdda1048f0ac15b90b09ae9e0e8005}{%
+           family={miyajima},
+           familyi={m\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {YRP}%
+      }
+      \strng{namehash}{e6bdda1048f0ac15b90b09ae9e0e8005}
+      \strng{fullhash}{e6bdda1048f0ac15b90b09ae9e0e8005}
+      \strng{fullhashraw}{e6bdda1048f0ac15b90b09ae9e0e8005}
+      \strng{bibnamehash}{e6bdda1048f0ac15b90b09ae9e0e8005}
+      \strng{authorbibnamehash}{e6bdda1048f0ac15b90b09ae9e0e8005}
+      \strng{authornamehash}{e6bdda1048f0ac15b90b09ae9e0e8005}
+      \strng{authorfullhash}{e6bdda1048f0ac15b90b09ae9e0e8005}
+      \strng{authorfullhashraw}{e6bdda1048f0ac15b90b09ae9e0e8005}
+      \field{sortinit}{m}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Hybrid LPWA testbed Environment in Yokosuka city}
+      \field{month}{3}
+      \field{title}{Established lorawan base station}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://yrprd.or.jp/en/LPWA/established-lorawan-base-station/
+      \endverb
+      \verb{url}
+      \verb https://yrprd.or.jp/en/LPWA/established-lorawan-base-station/
+      \endverb
+    \endentry
     \entry{SIGFOXsignalwiki}{misc}{}{}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
