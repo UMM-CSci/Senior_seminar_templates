@@ -446,35 +446,6 @@
       \verb https://www.sigidwiki.com/wiki/SIGFOX
       \endverb
     \endentry
-    \entry{CenturyLink}{misc}{}{}
-      \field{sortinit}{T}
-      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{CenturyLink}
-      \field{title}{The difference between 2.4 GHz and 5 GHz WiFi}
-      \verb{urlraw}
-      \verb https://www.centurylink.com/home/help/internet/wireless/which-frequency-should-you-use.html
-      \endverb
-      \verb{url}
-      \verb https://www.centurylink.com/home/help/internet/wireless/which-frequency-should-you-use.html
-      \endverb
-    \endentry
-    \entry{WiFiFreqImOn}{misc}{}{}
-      \list{publisher}{1}{%
-        {ImOn Communications}%
-      }
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Wi-Fi Frequencies Explained}
-      \field{title}{Wi-Fi Frequencies Explained}
-      \verb{urlraw}
-      \verb https://www.imon.net/imon-difference/news-events/wi-fi-frequencies-explained
-      \endverb
-      \verb{url}
-      \verb https://www.imon.net/imon-difference/news-events/wi-fi-frequencies-explained
-      \endverb
-    \endentry
     \entry{wild2023multi}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
