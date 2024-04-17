@@ -39,27 +39,27 @@
   \postcode{56267}
 }
 
-%%
-%% The abstract is a short summary of the work to be presented in the
-%% article.
 \begin{abstract}
-  This paper provides a comprehensive examination of the utilization of
-  Internet of Things (IoT) devices in wildlife management and tracking,
-  their evolutionary trajectory, and practical implementation in data
-  acquisition. Central to the discussion are key components of IoT networks,
-  including Sigfox, Wi-Fi-enabled devices, and IoT-based wireless sensor
-  networks, each analyzed for their role and efficacy. Communication
-  modalities within IoT frameworks, coupled with an evaluation of protocol
-  performance are evaluated.
+  
+  \todo[inline]{Hello reviewer! Thank you for taking time out of your day to read over my senior seminar paper, I really apreciate it! 
+  I figured I would leave a little note for you before you get started to tell you what I already know I am going to change. 
+  what is in this paper so far is all the content that I plan on keeping in the final paper, it is currently more than 6 pages, so 
+  I know I need to condense some stuff. The structure of the networking section changed multiple times while writing it and 
+  this is probably evident, I plan on cleaning that up a bit by explaining everyting about LPWAN and then just mention the things 
+  that set SigFox and LoRa apart. The background section is quite long and I plan on doing something to shorten it up. The 
+  components section was the last one that I worked on, I like the structure of it quite a bit and I will probably use it as a 
+  sort of template for revising the other sections.}
 
-  Furthermore, this seminar also addresses challenges inherent in wildlife
-  data collection methodologies, such as memory constraints, battery life,
-  transmission range and rate, and security vulnerabilities within IoT
-  ecosystems. By delving into potential solutions and technological
-  advancements, this paper aims to contribute to the refinement of wildlife
-  monitoring practices, fostering a more robust and effective approach to
-  conservation efforts.
-  \todo[inline, color=orange]{This is a preliminary abstract, I mainly added it just so I had something.}
+  The intersection of biologging and Internet of Things (IoT) technologies has revolutionized wildlife tracking, 
+  offering unprecedented insights into animal behavior and ecology. This paper provides a comprehensive overview 
+  of biologging and IoT concepts, exploring their integration in wildlife tracking applications. We delve into 
+  traditional wildlife tracking methods and emerging IoT solutions, analyzing the operational mechanisms, comparative 
+  advantages, and limitations of each. Specifically, we examine the use of Low Power Wide Area Networks (LPWAN) such 
+  as SigFox and LoRa, alongside traditional WiFi networks, highlighting their respective benefits and considerations 
+  in biologging systems. Furthermore, we discuss the critical role of security measures in safeguarding sensitive data 
+  transmitted by biologging devices. By elucidating these technologies' capabilities and challenges, this paper aims 
+  to provide researchers and conservationists with a framework for evaluating and implementing IoT-enabled biologging 
+  systems in ecological research and conservation efforts.
 \end{abstract}
 
 \doclicenseThis
@@ -75,6 +75,14 @@
 
 \section{Introduction}
 \label{sec:introduction}
+
+The proliferation of the Internet of Things (IoT) has sparked innovation across various domains, including 
+wildlife tracking. Understanding the convergence of biologging and IoT technologies is pivotal in comprehending 
+their applications in monitoring animal behavior and ecology. This paper provides a comprehensive overview of 
+the foundational concepts behind biologging and IoT, delving into their intersection and exploring the myriad 
+technologies employed in wildlife tracking. By examining traditional methods alongside emerging IoT solutions, 
+I aim to establish a framework for evaluating the efficacy of IoT-enabled biologging systems in ecological 
+research and conservation efforts.
 
 \section{Background}
 \label{sec:Background}
@@ -126,7 +134,7 @@ from the Smithsonian's National Zoo and Conservation Biology Institute, which
 shows the 3D movement of a prairie dogs.
 \begin{figure}[htbp]
   \centering
-  \fbox{\includegraphics[width=.9\columnwidth]{prairie_dog_map.jpg}}
+  \fbox{\includegraphics[width=.9\columnwidth]{images/prairie_dog_map.jpg}}
   \caption{3D movement of a prairie dog \cite{Kidangoor_2024}}
   \label{fig:prairie_dog_3D_movement}
 \end{figure}
@@ -203,12 +211,129 @@ and how it can be used in wildlife tracking. The Wild-Fi biologging tag, is a pr
 of how these three layers are implemented in a biologging device and is visually explained 
 by figure ~\ref{fig:wild-fi_IoT_diagram}.
 
-\section{Components of a IoT Biologging System}
+\section{Components of an IoT Biologging System}
 \label{sec:Components of a IoT Biologging Device}
 
-\subsection{The Sensor Device}
-\label{subsec:The Sensor Device}
+The architecture of an Internet of Things (IoT) biologging system is comprised of various 
+components that work in tandem to facilitate the collection, transmission, and analysis of data from 
+wildlife in their natural habitats. At the core of such systems are the physical devices responsible 
+for collecting and transmitting data, these devices are sensor and gateway devices. The design 
+of the hardware that powers these devices is important to understand the limitations and capabilities 
+of a greater biologging system.
 
+\subsection{Sensor Devices}
+\label{subsec:Sensor Devices}
+
+The sensor devices of an IoT based biologging system falls within the perception layer of the IoT 
+structure discussed in section ~\ref{subsec:What is the Internet of Things}. This means it is responsible 
+for interacting with the environment to collect data and sending it to the network layer. To complete these 
+tasks, four main hardware components work together: antenna, microcontroller, battery and of course, sensor(s). 
+Theses devices can also have optional components that improve it's performance, two that will be discussed in 
+this section are solar energy harvesters and extra local storage. 
+
+\subsubsection{Antenna}
+\label{subsubsec:antenna}
+
+An antenna is a piece of hardware that captures or transmits a radio frequency. These antenna are designed to 
+be compatible with specific frequencies\cite{Sheldon_2023}, and there are many different designs available for 
+purchase with varying prices. The antenna that is used will be determined by what frequency the network of choice 
+uses, the frequencies relevant to the biologging systems discussed in this paper can be found in sections 
+~\ref{subsec:Traditional Wifi (WLAN)} and ~\ref{subsec:Low Power Wide Area Networks (LPWAN)}.
+
+\subsubsection{Microcontroller}
+\label{subsubsec:Microcontroller}
+
+A microcontroller is necessary in a sensor device so that all the components can work together effectively. The 
+microcontroller is effectively a small computer that receives the data that is collected by the sensors and in 
+many cases supplies power to the sensors as well. When the microcontroller recieves the data from the sensors 
+it is responsible for encrypting and packaging it into the required format to be sent to the attached antenna 
+for transmission to a gateway device. A visual aide for the microcontroller acting as a hub for the other 
+components can be seen in figure ~\ref{fig:WildFi_microcontroller}, [1], where an ESP32 Pico D4 is used as the 
+microcontroller for the WildFi tag. Most microcontrollers will have flash memory to work with, however, 
+extra local storage can also be added on to act as a temporary holding space for data that is unable to be 
+transmitted due to lack of connection to a gateway, an example can be seen in figure ~\ref{fig:WildFi_microcontroller}, [16].
+\begin{figure}[htbp]
+  \centering
+  \fbox{\includegraphics[width=.9\columnwidth]{images/wildfi_microcontroller.jpg}}
+  \caption{SigFox network infrastructure\cite{wild2023internet}}
+  \label{fig:WildFi_microcontroller}
+\end{figure}
+
+\subsubsection{Battery}
+\label{subsubsec:Battery}
+
+A power source is required for all of the components to work. Lithium polymer (liPo) rechargeable batteries and 
+dry batteries like AA/AAA/AAA can all be used to power the sensor devices. As long as a battery connector exists 
+for the microcontroller of choice, anything can be used. Size and capacity are important factors to take into 
+consideration when choosing a battery. A small battery format is likely to be preferred to reduce the effects the 
+sensor devices may have on the animals function, but a sufficient capacity is also important in order to maintain 
+operation for an extended period of time. A popular strategy used to address this problem is the use of solar 
+energy harvesters to recharge the batteries; rechargeable batteries are a prerequisite for this setup. This allows 
+for a smaller battery to be used while still maintaining an impressive battery life. How a solar harvester connects 
+with a greater sensor system can be seen in figure ~\ref{fig:WildFi_microcontroller}, [18].
+
+\subsubsection{Sensors}
+\label{subsubsec:Sensors}
+
+A biologging device is just a small computer without at least one sensor attached. There are many different types of 
+sensors with different functions that can be attached to a microcontroller; so long as a given sensor has a way to be 
+connected to a specific microcontroller, it can likely be used. The purpose of all of the various sensors is 
+to collect data on the environment of the animal wearing the sensor device. This could mean locational data via GPS,   
+temperature, air pressure and other meteorologic data via environment sensors and more. The number and types of sensors 
+used in a sensor device will depend on what is of interest and there is a consideration of how many sensors can be 
+implemented while maintaining a reasonable size. How sensors connect with a greater sensor device system can 
+be seen in figure ~\ref{fig:WildFi_microcontroller}, [13, 14, 15].
+
+\subsection{Gateway Devices}
+\label{subsec:Gateway Devices}
+
+The gateway devices of an IoT based biologging system falls within the networking layer of the IoT 
+structure discussed in section ~\ref{subsec:What is the Internet of Things}. This means it is responsible 
+for shuttling information to and from the perception and application layers. To complete this task, four main 
+hardware components and requirements must be met: RF receiver/transmitter, data forwarding engine, power source, 
+and connection to internet or greater local storage.
+
+\subsubsection{RF receiver/transmitter}
+\label{subsubsec:RF receiver/transmitter}
+
+The RF (Radio Frequency) receiver/transmitter is a crucial component of the gateway device in a biologging system. 
+It serves the purpose of communicating wirelessly with the sensor devices attached to the animals or objects being 
+tracked. These RF modules receive data from the sensor devices and transmit commands or data to them as needed. 
+These devices operate on specific frequencies that will depend on the network that is being used, the frequencies 
+relevant to the biologging systems discussed in this paper can be found in sections ~\ref{subsec:Traditional Wifi 
+(WLAN)} and ~\ref{subsec:Low Power Wide Area Networks (LPWAN)}.
+
+\subsubsection{Data forwarding engine}
+\label{subsubsec:Data forwarding engine}
+
+The data forwarding engine within the gateway device manages the flow of data between the sensor devices and 
+the external networks or storage systems. In some cases, the data forwarding engine may dump data into a local storage 
+device or send it to the cloud via an internet connection. It processes incoming data from the RF receiver/transmitter, 
+applies any necessary protocols or formatting, and forwards it to the appropriate destination. This component may include 
+microcontrollers or specialized chips designed for efficient data handling and network communication.
+
+\subsubsection{Power Source}
+\label{subsubsec:Power Source}
+
+A reliable power source is essential for the uninterrupted operation of the gateway device in a biologging system. 
+Depending on the deployment scenario, power may be supplied through various means, including batteries, solar panels, 
+or grid based power. The choice of power source depends on factors such as the duration of deployment, 
+environmental conditions, resource availability, and power consumption of the gateway device. Efficient power management 
+strategies are employed to maximize the device's uptime while minimizing energy consumption and the need for frequent 
+maintenance. The designers of the WildFi tags utilized USB power banks and car batteries to power a gateway device for 
+weeks\cite{wild2023internet}. 
+
+\subsubsection{Internet Connection or Local Storage}
+\label{subsubsec:Internet Connection or Local Storage}
+
+The gateway device must have connectivity to either the internet or local storage to facilitate the transmission and 
+storage of data collected from the sensor devices. In scenarios where real-time monitoring or remote access is required, 
+an internet connection is necessary for transmitting data to cloud-based servers or remote databases. Alternatively, in 
+environments with limited or intermittent internet access, the gateway device may store data locally on onboard storage 
+devices such as flash memory or hard drives. This local storage option ensures data integrity and allows for later 
+retrieval and analysis when connectivity is restored. For example, the ESP32 CAM development boards that the creators 
+of the WildFi devices used as a foundation for a gateway device can store data locally on a SDHC memory card (up to 16GB) 
+\cite{wild2023internet}.
 
 \section{Networking}
 \label{sec:Networking}
@@ -244,7 +369,7 @@ standards that exist to allow in house development of an LPWAN network. The
 LoRaWAN protocol is one of the most popular LPWAN standards, and it is used by 
 many to implement their own LPWAN networks\cite{LoRa_Alliance®_2023}. Both of these 
 network solutions are explored further in subsections \ref{subsec:SigFox} and 
-\ref{subsec:LoRaWAN}.
+\ref{subsec:LoRa}.
 
 \subsubsection{SigFox}
 \label{subsec:SigFox}
@@ -262,7 +387,7 @@ the node device from having to explicitly send GPS data, allowing for other sens
 to be sent instead\cite{wild2023multi}. 
 \begin{figure}[htbp]
   \centering
-  \fbox{\includegraphics[width=.9\columnwidth]{SigfoxNetworkMap.jpg}}
+  \fbox{\includegraphics[width=.9\columnwidth]{images/SigfoxNetworkMap.jpg}}
   \caption{SigFox network infrastructure\cite{wild2023multi}}
   \label{fig:SigFox_infrastructure}
 \end{figure}
@@ -307,7 +432,7 @@ technique that the SigFox network uses.
 
 \begin{figure}[htbp]
   \centering
-  \fbox{\includegraphics[width=.9\columnwidth]{Chirp.png}}
+  \fbox{\includegraphics[width=.9\columnwidth]{images/Chirp.png}}
   \caption{Chirp Spread Spectrum Spreading factors\cite{ghoslya2017lora}}
   \label{fig:Chirp}
 \end{figure}
@@ -331,7 +456,7 @@ As seen in Figure ~\ref{fig:wild-fi_IoT_diagram}, the WildFi tag has the capabil
 connect to a WLAN router, smartphone hotspot, specially designed gateway, and more.
 \begin{figure}[htbp]
   \centering
-  \fbox{\includegraphics[width=.9\columnwidth]{WildFi_IoT.jpg}}
+  \fbox{\includegraphics[width=.9\columnwidth]{images/WildFi_IoT.jpg}}
   \caption{Wild-fi IoT infrastructure overview \cite{wild2023internet}}
   \label{fig:wild-fi_IoT_diagram}
 \end{figure}
@@ -389,7 +514,15 @@ Examining the benefits and pitfalls of each IoT network in relation to what is i
 system is important to understand what network to choose for a given application. While many factors are 
 important when accessing these networks for capabilities as IoT network solutions, range, data rate, battery 
 life and security will be the focus of this comparison because they are the most critical for a biologging 
-system.
+system. Each network discussed in section ~\ref{sec:Networking} offers different levels of ability in each 
+of these categories: I rank their abilities in figure ~\ref{fig:network_barplot}. This figure gives a good 
+idea of how the three networks compare to each other in the five critical categories. Ultimately, the best 
+network will depend on availability of public networks and the technical knowhow and ability of the user. 
+If the user is not capable of creating their own network and devices, then a solution like SigFox or LoRa 
+may be a better choice. On the other hand, if a user can develop their own system, there are some serious 
+benefits to using LoRa or WLAN, mainly data rate and cost. Each use case for a biologging system is 
+unique and the network of choice will mostly depend on what is needed to meet the demands of the specific 
+use case.
 
 \definecolor{MineShaft}{rgb}{0.2,0.2,0.2}
 \definecolor{Silver}{rgb}{0.752,0.752,0.752}
@@ -422,21 +555,23 @@ Security             & AES-128                            & AES-128             
 
 \begin{figure}[htbp]
   \centering
-  \fbox{\includegraphics[width=.9\columnwidth]{LPWANcomparrison.jpg}}
-  \caption{Respective advantages of Sigfox, LoRa, and NB-IoT in terms of IoT factors. \cite{mekki2019comparative}}
-  \label{fig:LPWAN_comparison}
+  \fbox{\includegraphics[width=.9\columnwidth]{images/Network_Comparison_barplot.png}}
+  \caption{Rankings of discussed networks under 5 critical criteria (5=better, 1=worse)}
+  \label{fig:network_barplot}
 \end{figure}
 
-\begin{figure}[htbp]
-  \centering
-  \fbox{\includegraphics[width=.9\columnwidth]{NetworkRangeDataRateGraph.jpg}}
-  \caption{Data rate vs range for different network technologies. \cite{evanczukspeed}}
-  \label{fig:LPWAN_data_rate_range}
-\end{figure}
 
 \section{Conclusion}
 \label{sec:Coclusion}
 
+In conclusion, the integration of IoT technologies with biologging systems presents unprecedented opportunities for 
+advancing wildlife tracking and ecological research. The exploration of Low Power Wide Area Networks (LPWAN) such 
+as SigFox and LoRa, alongside traditional WiFi networks, underscores the importance of selecting the most suitable 
+networking protocol based on the specific requirements of the application. Moreover, robust security measures, coupled 
+with advancements in sensor technology and data transmission, offer promising avenues for enhancing the efficiency 
+and reliability of biologging systems. As we continue to innovate and refine these technologies, the future of 
+wildlife monitoring holds immense potential for gaining deeper insights into animal behavior, and contributing to 
+conservation initiatives.
 
 %%
 %% The acknowledgments section is defined using the "acks" environment
@@ -444,10 +579,7 @@ Security             & AES-128                            & AES-128             
 %% identification of the section in the article metadata, and the
 %% consistent spelling of the heading.
 \begin{acks}
-  This is where you thank those who helped you better understand the material
-  and gave you helpful feedback on the paper, usually including your adviser.
-  This is not a place to thank your family, your significant other or your best friend,
-  or anyone else  for moral support or yummy cookies.
+  TODO
 \end{acks}
 
 %%
