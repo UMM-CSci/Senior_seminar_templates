@@ -56,6 +56,17 @@ You could do the whole thing on the command line with editors like emacs or vim,
  - [LyX](http://www.lyx.org/)
  - [TexShop](http://pages.uoregon.edu/koch/texshop/) (Mac specific)
 
+#### Troubleshooting
+
+When running on Windows, I had an error 
+
+```
+! pdfTeX error (font expansion): auto expansion is only possible with scalable 
+fonts.
+```
+
+Running the file `updmap` in `C:\Program Files\MiKTeX\miktex\bin\x64` fixed the issue. The file location, of course, depends on where MikTex got installed. 
+
 ## Some notes on running LaTeX directly
 
 > The notes below only apply if you're running something
