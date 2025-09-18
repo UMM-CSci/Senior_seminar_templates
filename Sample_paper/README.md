@@ -18,6 +18,14 @@ know.
 
 # Accessibility
 
+## Resources
+
+The main source for creating accessible articles is the guide [Accessible PDFs Using the ACM Article Template by Kevin Lin](https://kevinl.info/accessible-pdfs-using-the-acm-article-template/)
+
+This includes links to tools for checking accessibility and template files. 
+
+## Changes to sample paper
+
 These are changes made to add tags for accessibility and to improve
 other accessibility issues:
 
@@ -35,7 +43,6 @@ other accessibility issues:
 
 Future work:
 * Add descriptions to pictures. 
-* Add resources on ACM accessibility to this document. 
 
 
 
