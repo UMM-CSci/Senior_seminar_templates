@@ -22,7 +22,13 @@
 %% in the same archive or directory.)
 %%
 %% The first command in your LaTeX source must be the \documentclass command.
-\documentclass[sigplan,screen,nonacm]{acmart}
+\DocumentMetadata{
+  lang=en,
+  pdfversion=2.0,
+  pdfstandard=ua-2,
+  testphase={phase-III,firstaid,math,title}
+}
+\documentclass[sigplan,screen,nonacm]{acmart-tagged}
 \usepackage{color}
 \setlength {\marginparwidth }{2cm}
 \usepackage[colorinlistoftodos]{todonotes}
